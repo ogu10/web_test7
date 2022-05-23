@@ -5,9 +5,18 @@
     <title>Bootstrap Trial</title>
     <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link href="css/navbar.css" rel="stylesheet">
     <link href="css/styleSheet.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/2b5ebdc171.js" crossorigin="anonymous"></script>
+
+    <!-- Vendor CSS Files -->
+<!--    <link href="assets/vendor/aos/aos.css" rel="stylesheet">-->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!--    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">-->
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
 </head>
 <header>
 <?php include "php/header.php"; ?>
@@ -24,11 +33,10 @@
 </section>
 <!-- ======= Hero Section END ======= -->
 
-<br><br><br>
 
 <!-- ======= Services Section ======= -->
 <section id="services" class="services">
-    <br><br>
+    <br><br><br><br><br>
     <div class="container">
         <div class="section-title" data-aos="fade-in" data-aos-delay="100">
             <h2>About Us</h2>
@@ -41,7 +49,7 @@
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                 <div class="icon-box" data-aos="fade-up">
                     <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                    <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+                    <h4 class="title"><a href="">Passion</a></h4>
                     <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
                 </div>
             </div>
@@ -49,7 +57,7 @@
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                 <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                     <div class="icon"><i class="bx bx-file"></i></div>
-                    <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+                    <h4 class="title"><a href="">Scheme</a></h4>
                     <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
                 </div>
             </div>
@@ -57,7 +65,7 @@
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                 <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
                     <div class="icon"><i class="bx bx-tachometer"></i></div>
-                    <h4 class="title"><a href="">Magni Dolores</a></h4>
+                    <h4 class="title"><a href="">Speedy</a></h4>
                     <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
                 </div>
             </div>
@@ -65,7 +73,7 @@
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                 <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
                     <div class="icon"><i class="bx bx-world"></i></div>
-                    <h4 class="title"><a href="">Nemo Enim</a></h4>
+                    <h4 class="title"><a href="">Global</a></h4>
                     <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
                 </div>
             </div>
@@ -75,6 +83,36 @@
     </div>
 </section>
 <!-- ======= Services Section END ======= -->
+
+
+<!-- ======= Slider Section ======= -->
+<section id="gallery" class="photoSlider section-bg">
+    <br>
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>Gallery</h2>
+            <p>見たことのない、絶景のやつを</p>
+        </div>
+    </div>
+    <?php include "php/slider.php"; ?>
+</section>
+<br>
+<!-- ======= Slider Section END ======= -->
+
+
+<!-- ======= Table Section ======= -->
+<section id="tables" class="tables section-bg">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>Table</h2>
+            <p>これまで作ったてーぶるを</p>
+        </div>
+        <div class="container col-md-10">
+            <div id="ajaxLoad"></div></div>
+    </div>
+</section>
+<br>
+<!-- ======= Table Section END ======= -->
 
 
 <!-- ======= Contact Section ======= -->
@@ -152,5 +190,18 @@
 
 <footer>
     <?php include "php/footer.php"; ?>
+
+    <script>
+        function reloadData(){
+            $.get("php/tableData.php").then(
+                function(response){
+                    $("#ajaxLoad").html(response)
+                }
+            )
+        }
+        $(document).ready(function(){
+            reloadData();
+        });
+    </script>
 </footer>
 </html>
