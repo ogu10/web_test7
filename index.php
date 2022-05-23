@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="css/styleSheet.css" rel="stylesheet">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>cd/
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/2b5ebdc171.js" crossorigin="anonymous"></script>
 
     <!-- Vendor CSS Files -->
@@ -33,7 +33,13 @@
 </section>
 <!-- ======= Hero Section END ======= -->
 
-<br><br><br>
+<!-- ======= Slider Section ======= -->
+<section id="photoSlider" class="photoSlider">
+<!--    --><?php /*include "php/slider.php"; */?>
+</section>
+<!-- ======= Slider Section END ======= -->
+
+<br>
 
 <!-- ======= Services Section ======= -->
 <section id="services" class="services">
@@ -91,7 +97,7 @@
     <div class="container" data-aos="fade-up">
         <div class="section-title">
             <h2>Table</h2>
-            <p>てーぶるをココに</p>
+            <p>これまでに作った、てーぶるのやつを</p>
         </div>
         <div class="container col-md-10">
             <div id="ajaxLoad"></div></div>
