@@ -5,9 +5,18 @@
     <title>Bootstrap Trial</title>
     <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link href="css/navbar.css" rel="stylesheet">
     <link href="css/styleSheet.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>cd/
     <script src="https://kit.fontawesome.com/2b5ebdc171.js" crossorigin="anonymous"></script>
+
+    <!-- Vendor CSS Files -->
+<!--    <link href="assets/vendor/aos/aos.css" rel="stylesheet">-->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!--    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">-->
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
 </head>
 <header>
 <?php include "php/header.php"; ?>
@@ -75,6 +84,21 @@
     </div>
 </section>
 <!-- ======= Services Section END ======= -->
+
+
+<!-- ======= Table Section ======= -->
+<section id="tables" class="tables section-bg">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>Table</h2>
+            <p>てーぶるをココに</p>
+        </div>
+        <div class="container col-md-10">
+            <div id="ajaxLoad"></div></div>
+    </div>
+</section>
+<br>
+<!-- ======= Table Section END ======= -->
 
 
 <!-- ======= Contact Section ======= -->
@@ -152,5 +176,18 @@
 
 <footer>
     <?php include "php/footer.php"; ?>
+
+    <script>
+        function reloadData(){
+            $.get("php/tableData.php").then(
+                function(response){
+                    $("#ajaxLoad").html(response)
+                }
+            )
+        }
+        $(document).ready(function(){
+            reloadData();
+        });
+    </script>
 </footer>
 </html>
