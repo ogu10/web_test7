@@ -18,17 +18,17 @@
 <body>
 
 <div class="slider">
-    <div><img src="../images/2_1.jpg" alt="画像の説明"></div>
-    <div><img src="../images/2_2.jpg" alt="画像の説明"></div>
-    <div><img src="../images/2_3.jpg" alt="画像の説明"></div>
-    <div><img src="../images/2_4.jpg" alt="画像の説明"></div>
+    <div><img src="images/2_1.jpg" alt="画像の説明" style="width: 800px; height: 500px"></div>
+    <div><img src="images/2_2.jpg" alt="画像の説明" style="width: 800px; height: 500px"></div>
+    <div><img src="images/2_3.jpg" alt="画像の説明" style="width: 800px; height: 500px"></div>
+    <div><img src="images/2_4.jpg" alt="画像の説明" style="width: 800px; height: 500px"></div>
 </div>
 
 </body>
 
 <style type="text/css">
     .bx-wrapper {
-        margin: 20% !important;
+        margin: 15% !important;
         -moz-box-shadow: none !important;
         -webkit-box-shadow: none !important;
         box-shadow: none !important;
@@ -48,5 +48,7 @@
         visibility: hidden !important;
     }
 </style>
-
+<footer>
+    <link href="css/styleSheet.css" rel="stylesheet">
+</footer>
 </html>
