@@ -28,7 +28,7 @@
 
 <style type="text/css">
     .bx-wrapper {
-        margin: 25% !important;
+        margin: 20% !important;
         -moz-box-shadow: none !important;
         -webkit-box-shadow: none !important;
         box-shadow: none !important;
