@@ -394,10 +394,10 @@ section {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
-    width: 122px;
-    height: 66px;
-    background: url(../img/section-title-bg.png) no-repeat;
+    transform: translate(-45%, -45%);
+    width: 300px;
+    height: 150px;
+    background: url(../images/title3.png) no-repeat;
     z-index: -1;
 }
 .section-title p {

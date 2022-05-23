@@ -9,7 +9,7 @@
         $(document).ready(function(){
             $('.slider').bxSlider({
                 auto: true,
-                pause: 2000,
+                pause: 2500,
             });
         });
     </script>
@@ -28,7 +28,8 @@
 
 <style type="text/css">
     .bx-wrapper {
-        margin: 15% !important;
+        margin-left: 15% !important;
+        margin-right: 15% !important;
         -moz-box-shadow: none !important;
         -webkit-box-shadow: none !important;
         box-shadow: none !important;

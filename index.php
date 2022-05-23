@@ -86,15 +86,17 @@
 
 
 <!-- ======= Slider Section ======= -->
-<section id="photoSlider" class="photoSlider">
+<section id="gallery" class="photoSlider section-bg">
+    <br>
     <div class="container" data-aos="fade-up">
         <div class="section-title">
-            <h2>Slider</h2>
+            <h2>Gallery</h2>
             <p>見たことのない、絶景のやつを</p>
         </div>
     </div>
     <?php include "php/slider.php"; ?>
 </section>
+<br>
 <!-- ======= Slider Section END ======= -->
 
 
