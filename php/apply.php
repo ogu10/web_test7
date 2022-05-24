@@ -44,7 +44,7 @@ if(isset($_POST['datapost'])) {header('Location: regist2.php');} ?>
             </head>
             <h2>Create new account!</h2><br><br><br>
             <div class="log-in-box">
-            <form action="../regist2.php" method="post">
+            <form action="regist2.php" method="post">
                 <input type="text" id="name" name="name" placeholder="name" oninput="checkName()"><br>
                 <input type="password" name="pass" placeholder="pass"><br>
                 <br><br>
