@@ -20,20 +20,20 @@
 
 </head>
 <header>
-<?php include "php/header.php"; ?>
+    <?php
+    session_start();
+    include 'php/connection.php';
+    if (!isset($_SESSION["user_name"])) {}else{
+        header("Location: ");}
+    if(isset($_POST['login'])) {
+        $_SESSION['name'] = $_POST['name'];
+        $_SESSION['pass'] = $_POST['pass'];
+        header('Location: php/confirm.php');}
+    ?>
+    <?php include "php/header.php"; ?>
 </header>
 
 <!-- ======= Log in Section ======= -->
-<?php
-session_start();
-include 'php/connection.php';
-if (!isset($_SESSION["user_name"])) {}else{
-    header("Location: php/are_you_ready.php");}
-/*if(isset($_POST['login'])) {
-    $_SESSION['name'] = $_POST['name'];
-    $_SESSION['pass'] = $_POST['pass'];
-    header('Location: confirm.php');}*/
-?>
 <div lang="ja">
     <head>
         <link rel="stylesheet" href="style.css"></head>
@@ -44,7 +44,7 @@ if (!isset($_SESSION["user_name"])) {}else{
             <!--    <a href="submit.php">go to index</a>--><br><br>
             <!--                session ID is <font color='yellow'>
                 <?php /*echo($_COOKIE['PHPSESSID'] );*/?></font>--><br>
-            <body id="hero" class="log-in-box"><!--background="images/a.jpg"-->
+            <body class="log-in-body"><!--background="images/a.jpg"-->
             <head>
                 <meta charset="UTF-8">
                 <title>PHP_TEST_no_5</title>
@@ -60,7 +60,7 @@ if (!isset($_SESSION["user_name"])) {}else{
                     <i class="fa-regular fa-futbol"></i> log in！</button></form><br>
 
             <p> if you are not registered, <br>
-                <a href="pages/apply.php"><button type="button"><i class="fa-solid fa-pen-to-square"></i> Apply!</button></a>
+                <a href="php/apply.php"><button type="button"><i class="fa-solid fa-pen-to-square"></i> Apply!</button></a>
             </p>
             </div>
         </div></body>
@@ -68,5 +68,15 @@ if (!isset($_SESSION["user_name"])) {}else{
 <!-- ======= Log in Section END ======= -->
 <footer>
     <?php include "php/footer.php"; ?>
+
+    <script>
+        function checkName() {
+            const name = document.getElementById("name");
+            const button = document.getElementById("button");
+            if (name.value && name.value.length) {
+                button.disabled = false;
+            } else {button.disabled = true;}
+        }
+    </script>
 </footer>
 </html>
