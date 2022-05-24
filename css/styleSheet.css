@@ -119,6 +119,16 @@ h1, h2, h3, h4, h5, h6 {
 .navbar {
     padding: 0;
 }
+
+/*.navbar.changeNav{
+    background: rgba(0,0,255,.9);
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.navbar.changeNav li{
+    padding: 20px 10px;
+}*/
+
 .navbar ul {
     margin: 0;
     padding: 0;
@@ -196,6 +206,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 100%;
     visibility: visible;
 }
+
 @media (max-width: 1366px) {
     .navbar .dropdown .dropdown ul {
         left: -90%;
