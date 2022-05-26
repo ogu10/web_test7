@@ -376,6 +376,13 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+#addForm2 {
+    background: url("../images/b.jpg") top center;
+    background-attachment: fixed;
+    width: 90%;
+    margin-left: 5%;
+}
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/

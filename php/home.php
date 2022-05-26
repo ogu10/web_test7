@@ -100,6 +100,21 @@
 <!-- ======= Slider Section END ======= -->
 
 
+<!-- ======= Add Section ======= -->
+<section id="addForm" class="photoSlider section-bg">
+    <br>
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>Add Form</h2>
+            <p>新しい選手を</p>
+        </div>
+    </div>
+    <?php include "optionPages/addForm.php"; ?>
+</section>
+<br>
+<!-- ======= Add Section END ======= -->
+
+
 <!-- ======= Table Section ======= -->
 <section id="tables" class="tables section-bg">
     <div class="container" data-aos="fade-up">
@@ -203,5 +218,10 @@
             reloadData();
         });
     </script>
+
+    <?php
+    if(!isset($_SESSION["user_name"])) {
+        header("Location: optionPages/ban.php");} ?>
+
 </footer>
 </html>

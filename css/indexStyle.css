@@ -17,9 +17,10 @@ h2 {
     background-size: cover;
     position: relative;
     margin-bottom: -90px;
+    margin-top: 40px;
 }
 
 .log-in-box {
-    height: 500px;
-    margin-top: 10px;
+    height: 480px;
+    margin-top: 40px;
 }

@@ -20,10 +20,17 @@
                         <a class="nav-link" href="#gallery">Gallery</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#addForm">Add Form</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#tables">Tables</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link scrollto" href="#contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logOut.php">
+                            <i class="fa-solid fa-right-from-bracket"></i> log out</a>
                     </li>
                     <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                          <ul>
