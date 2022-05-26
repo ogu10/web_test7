@@ -1,13 +1,13 @@
 <?php
 ini_set('display_errors',1);//画面にエラーを表示
 error_reporting(E_ALL);//全ての種類のエラーを表示
-if(isset($_POST['datapost'])) {
+/*if(isset($_POST['datapost'])) {
     $_SESSION['No'] = $_POST['No'];
     $_SESSION['team'] = $_POST['team'];
     $_SESSION['name'] = $_POST['name'];
     $_SESSION['league_id'] = $_POST['league_id'];
-    header('Location: regist.php');
-}
+    header('Location: optionPages/addFunc.php');
+}*/
 
 ?>
 <div lang="ja" id="addForm2">
@@ -38,11 +38,11 @@ if(isset($_POST['datapost'])) {
             <input type="radio" name="league_id" value="4">La Liga<br>
             <input type="radio" name="league_id" value="5">Ligue 1</font>
         <br><br>
-        <button type="submit" name="datapost" id="button" class="black_button" <!--disabled-->>
+        <button type="submit" name="datapost" id="button" class="black_button"> <!--disabled-->
         <i class="fa-regular fa-futbol"></i> Kick off！</button>
         <p><font color='Green'></font></form>
     </p>
-    <p>
+    <!--<p>
         <a href="pages/unit.php">go to unit!</a>
-    </p></div><br><br>
+    </p>--></div><br><br>
 

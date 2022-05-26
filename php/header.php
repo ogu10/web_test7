@@ -1,3 +1,4 @@
+<link rel="icon" type="image/png" sizes="192x192" href="../images/android-chrome-192x192.png">
 <header id="header" class="fixed-top header-transparent">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -17,13 +18,13 @@
                         <a class="nav-link" href="#services">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#addForm">Add Form</a>
+                        <a class="nav-link" href="#addForm">Registrate</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#tables">Tables</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link scrollto" href="#contact">Contact Us</a>

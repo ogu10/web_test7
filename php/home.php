@@ -19,7 +19,16 @@
 
 </head>
 <header>
-    <?php include "header.php"; ?>
+    <?php
+    if(isset($_POST['datapost'])) {
+        $_SESSION['No'] = $_POST['No'];
+        $_SESSION['team'] = $_POST['team'];
+        $_SESSION['name'] = $_POST['name'];
+        $_SESSION['league_id'] = $_POST['league_id'];
+        echo $_SESSION['No'];
+        header('Location: optionPages/addFunc.php');
+    }
+    include "header.php"; ?>
 </header>
 
 <!-- ======= Hero Section ======= -->
@@ -85,21 +94,6 @@
 <!-- ======= Services Section END ======= -->
 
 
-<!-- ======= Slider Section ======= -->
-<section id="gallery" class="photoSlider section-bg">
-    <br>
-    <div class="container" data-aos="fade-up">
-        <div class="section-title">
-            <h2>Gallery</h2>
-            <p>見たことのない、絶景のやつを</p>
-        </div>
-    </div>
-    <?php include "slider.php"; ?>
-</section>
-<br>
-<!-- ======= Slider Section END ======= -->
-
-
 <!-- ======= Add Section ======= -->
 <section id="addForm" class="photoSlider section-bg">
     <br>
@@ -128,6 +122,21 @@
 </section>
 <br>
 <!-- ======= Table Section END ======= -->
+
+
+<!-- ======= Slider Section ======= -->
+<section id="gallery" class="photoSlider section-bg">
+    <br>
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>Gallery</h2>
+            <p>見たことのない、絶景のやつを</p>
+        </div>
+    </div>
+    <?php include "slider.php"; ?>
+</section>
+<br>
+<!-- ======= Slider Section END ======= -->
 
 
 <!-- ======= Contact Section ======= -->
