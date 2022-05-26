@@ -19,13 +19,17 @@
 
 </head>
 <header>
+    session_start()
     <?php
+    $_SESSION['no'] = "";
+    $_SESSION['team'] = "";
+    $_SESSION['name'] = "";
+    $_SESSION['league_id'] = "";
     if(isset($_POST['datapost'])) {
-        $_SESSION['No'] = $_POST['No'];
+        $_SESSION['no'] = $_POST['no'];
         $_SESSION['team'] = $_POST['team'];
         $_SESSION['name'] = $_POST['name'];
         $_SESSION['league_id'] = $_POST['league_id'];
-        echo $_SESSION['No'];
         header('Location: optionPages/addFunc.php');
     }
     include "header.php"; ?>
@@ -116,6 +120,10 @@
             <h2>Table</h2>
             <p>これまで作ったてーぶるを</p>
         </div>
+        <?php
+        if(isset($_SESSION['message'])) {
+            echo $_SESSION['message'];
+        } ?>
         <div class="container col-md-10">
             <div id="ajaxLoad"></div></div>
     </div>

@@ -78,5 +78,10 @@
             } else {button.disabled = true;}
         }
     </script>
+    <?php
+    if(isset($_POST['login'])){
+        header('Lo');
+    };
+    ?>
 </footer>
 </html>

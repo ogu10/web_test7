@@ -1,15 +1,3 @@
-<?php
-ini_set('display_errors',1);//画面にエラーを表示
-error_reporting(E_ALL);//全ての種類のエラーを表示
-/*if(isset($_POST['datapost'])) {
-    $_SESSION['No'] = $_POST['No'];
-    $_SESSION['team'] = $_POST['team'];
-    $_SESSION['name'] = $_POST['name'];
-    $_SESSION['league_id'] = $_POST['league_id'];
-    header('Location: optionPages/addFunc.php');
-}*/
-
-?>
 <div lang="ja" id="addForm2">
     <head>
         <meta charset="UTF-8">
@@ -29,7 +17,7 @@ error_reporting(E_ALL);//全ての種類のエラーを表示
             </p>add your </font><font color='red'>favorite Soccer player </font><font color='white'>below!</p></font>
 
     <form action="" method="post">
-        <input type="int" name="No" placeholder="No"><br>
+        <input type="int" name="no" placeholder="No"><br>
         <input type="text" id="name" name="name" placeholder="name" oninput="checkName()"><br>
         <input type="text" name="team" placeholder="team"><br><br><font color='Lime'>
             <input type="radio" name="league_id" value="1">Premium League<br>
