@@ -45,7 +45,7 @@
                         <input type="email" name="email" placeholder="e-mail address"><input type="submit" value="Subscribe">
                     </form>
                     <br><div align="right">
-                        <a href="http://localhost/web_test3/pages/test9/test9.php">Link</a></div>
+                        <a href="http://localhost:8080//web_test3/pages/test9/test9.php">Link</a></div>
                 </div>
             </div>
         </div>
