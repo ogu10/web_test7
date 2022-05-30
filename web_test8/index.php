@@ -19,6 +19,7 @@
 
 </head>
 <header>
+
     <?php
     session_start();
     $_SESSION['no'] = "";
@@ -38,72 +39,53 @@
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact section-bg">
     <div class="container" data-aos="fade-up">
-        <br>
+        <br><br>
         <div class="section-title">
-            <h2>Contact</h2>
+            <h2>Regist</h2>
             <p>サービスや採用、メディア取材等のお問い合わせはこちらのフォームからお願いいたします。</p>
         </div>
 
         <div class="row">
-            <div class="col-lg-6">
-                <div class="info-box mb-4">
-                    <i class="bx bx-map"></i>
-                    <h3>Our Address</h3>
-                    <p>1-19-8, Kitahorie, Nishi-ku, Osaka-city, Osaka</p>
-                </div>
-            </div>
 
-            <div class="col-lg-3 col-md-6">
-                <div class="info-box  mb-4">
-                    <i class="bx bx-envelope"></i>
-                    <h3>Email Us</h3>
-                    <p>t_ogura@jobins.jp</p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="info-box  mb-4">
-                    <i class="bx bx-phone-call"></i>
-                    <h3>Call Us</h3>
-                    <p>06-6567-9460</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="col-lg-6">
-                <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d140486.89064982085!2d135.32691743281862!3d34.714534730891685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e71d2942f2d7%3A0x6208c7242f57dea7!2z5qCq5byP5Lya56S-Sm9CaW5z!5e0!3m2!1sja!2sjp!4v1652761262004!5m2!1sja!2sjp" width="100%" height="384" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-
-            <div class="col-lg-6">
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <div class="col-lg-4">
+                <br>
+                <form action="php/register.php" method="post" role="form" class="php-email-form">
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                            <input type="text" name="no2" class="form-control" id="no2" placeholder="No.">
                         </div>
                         <div class="col-md-6 form-group mt-3 mt-md-0">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                            <input type="team2" class="form-control" name="team2" id="team2" placeholder="Team">
                         </div>
                     </div>
                     <div class="form-group mt-3">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                        <input type="text" class="form-control" name="name2" id="name2" placeholder="Name">
                     </div>
-                    <div class="form-group mt-3">
-                        <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                    <div class="form-group mt-3" align="center">
+                        <font color=lime><b><br>
+                        <input type="radio" name="league_id2" value="5">Ligue 1 &nbsp;
+                        <input type="radio" name="league_id2" value="4">La Liga<br>
+                        <input type="radio" name="league_id2" value="2">Serie A &nbsp;
+                        <input type="radio" name="league_id2" value="3">Bundesliga<br>
+                        <input type="radio" name="league_id2" value="1" checked>Premium League
+                        </b></font>
                     </div>
+                    <br>
                     <div class="my-3">
                         <div class="loading">Loading</div>
                         <div class="error-message"></div>
                         <div class="sent-message">Your message has been sent. Thank you!</div>
                     </div>
-                    <div class="text-center"><button type="submit">Send Message</button></div>
+                    <div class="text-center"><button type="submit">Apply!</button></div>
                 </form>
             </div>
 
-        </div>
+            <div class="col-lg-8">
+                <div id="ajaxLoad"></div>
+            </div>
 
+        </div>
+        <br>
     </div>
 </section>
 <!-- ======= Contact Section END ======= -->
@@ -124,9 +106,9 @@
         });
     </script>
 
-    <?php
-    if(!isset($_SESSION["user_name"])) {
-        header("Location: optionPages/ban.php");} ?>
+<!--    --><?php
+/*    if(!isset($_SESSION["user_name"])) {
+        header("Location: optionPages/ban.php");} */?>
 
 </footer>
 </html>

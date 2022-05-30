@@ -1,9 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<!--    <link rel="stylesheet" href="/web_test3/pages/test7/test4.css">
-    <link rel="stylesheet" href="/web_test3/pages/test7/Mr_button.css">-->
+    <meta charset="UTF-8">
+    <title>Bootstrap Trial</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="../images/android-chrome-192x192.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="../css/styleSheet.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/2b5ebdc171.js" crossorigin="anonymous"></script>
-</head>
 
+    <!-- Vendor CSS Files -->
+    <!--    <link href="css/assets/vendor/aos/aos.css" rel="stylesheet">-->
+    <link href="../css/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--    <link href="css/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">-->
+    <link href="../css/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../css/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../css/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+</head>
 
 <?php
 include 'connection.php';
@@ -48,6 +62,18 @@ $result_t = $teams->fetchAll(PDO::FETCH_ASSOC);
 $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
 ?>
 
+<?php include "header.php"; ?>
+
+<section id="tables" class="tables section-bg">
+    <div class="container col-lg-8" data-aos="fade-up">
+        <br><br>
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+            <h2>Table</h2>
+            <p>あなたのキャリアや才能をJoBinsで存分に発揮しませんか？<br>
+                きちんと成果が評価される環境、人種も国籍も関係なく個人を尊重する組織文化、<br>
+                よく働き、よく遊ぶ仕事仲間があなたを待っています！</p>
+        </div>
+
 <form name="form1" id="form1" action="../index.php" method="GET">
     <input type="hidden" name="deleteID" id="deleteID" value="<?php echo $deleteID ?>"></form>
 
@@ -84,21 +110,23 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
             <?php endforeach ?>
 </table>
 <div align="center">
-<?php
-// resultテーブルのデータ件数を取得する
-$page_num = $dbh->prepare("SELECT COUNT(*) id	FROM players");
-$page_num->execute();
-$page_num = $page_num->fetchColumn();
-// ページネーションの数を取得する
-$pagination = ceil($page_num / 6);
-?>
+    <?php
+    // resultテーブルのデータ件数を取得する
+    $page_num = $dbh->prepare("SELECT COUNT(*) id	FROM players");
+    $page_num->execute();
+    $page_num = $page_num->fetchColumn();
+    // ページネーションの数を取得する
+    $pagination = ceil($page_num / 6);
+    ?>
 
-<?php for ($x=1; $x <= $pagination ; $x++) { ?>
-<a href="?page=<?php echo $x ?>"><?php echo $x; ?></a>
-<?php } // End of for ?>
-<?php $_SESSION['page']=$x; ?>
+    <?php for ($x=1; $x <= $pagination ; $x++) { ?>
+        <a href="?page=<?php echo $x ?>"><?php echo $x; ?></a>
+    <?php } // End of for ?>
+    <?php $_SESSION['page']=$x; ?>
 </div>
 </form>
+        <br><br>
+</div></section>
 
 
 <script>
@@ -127,3 +155,7 @@ $pagination = ceil($page_num / 6);
         }
     }
 </script>
+
+<footer>
+    <?php include "footer.php"; ?>
+</footer>

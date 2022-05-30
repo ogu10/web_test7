@@ -2,7 +2,7 @@
 <header id="header" class="fixed-top header-transparent">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">JoBins</a>
+            <a class="navbar-brand" href="http://localhost:8080/web_test7/web_test8/">JoBins</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -21,7 +21,7 @@
                         <a class="nav-link" href="#addForm">Registrate</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#tables">Tables</a>
+                        <a class="nav-link" href="http://localhost:8080/web_test7/web_test8/php/tableData2.php">Tables</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#gallery">Gallery</a>
@@ -30,7 +30,7 @@
                         <a class="nav-link scrollto" href="#contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="logOut.php">
+                        <a class="nav-link" href="php/logOut.php">
                             <i class="fa-solid fa-right-from-bracket"></i> log out</a>
                     </li>
                     <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
