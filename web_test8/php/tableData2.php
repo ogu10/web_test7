@@ -122,7 +122,6 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
     <?php for ($x=1; $x <= $pagination ; $x++) { ?>
         <a href="?page=<?php echo $x ?>"><?php echo $x; ?></a>
     <?php } // End of for ?>
-    <?php $_SESSION['page']=$x; ?>
 </div>
 </form>
         <br><br>

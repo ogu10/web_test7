@@ -96,7 +96,6 @@ $pagination = ceil($page_num / 6);
 <?php for ($x=1; $x <= $pagination ; $x++) { ?>
 <a href="?page=<?php echo $x ?>"><?php echo $x; ?></a>
 <?php } // End of for ?>
-<?php $_SESSION['page']=$x; ?>
 </div>
 </form>
 
