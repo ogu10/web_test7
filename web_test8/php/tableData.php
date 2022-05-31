@@ -48,7 +48,7 @@ $result_t = $teams->fetchAll(PDO::FETCH_ASSOC);
 $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
 ?>
 
-<form name="form1" id="form1" action="../index.php" method="GET">
+<form name="form1" id="form1" action="php/delete.php" method="GET">
     <input type="hidden" name="deleteID" id="deleteID" value="<?php echo $deleteID ?>"></form>
 
 <table id="players_list" class="players_list table table-striped">

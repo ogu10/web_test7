@@ -8,9 +8,9 @@ if (empty($_POST['name2'])) {
     $errors['name2'] = 'Name is required.';
 }
 
-if (empty($_POST['no2'])) {
+/*if (empty($_POST['no2'])) {
     $errors['no2'] = 'No is required.';
-}
+}*/
 
 if (!empty($errors)) {
     $data['success'] = false;
@@ -41,7 +41,7 @@ if (!empty($errors)) {
 /*    $stmt->bindValue(':league_id', $league_id, PDO::PARAM_STR);//登録する文字の型を固定*/
     $stmt->execute();//データベースの登録を実行
     $dbh = NULL;//データベース接続を解除
-    header('location: ../index.php');
+    header('location: ../index.php?page=1');
 }}
 
 echo json_encode($data);

@@ -2,7 +2,7 @@
 <header id="header" class="fixed-top header-transparent">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="http://localhost:8080/web_test7/web_test8/">JoBins</a>
+            <a class="navbar-brand" href="http://localhost:8080/web_test7/web_test8/index.php?page=1">JoBins</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
