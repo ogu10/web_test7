@@ -92,10 +92,10 @@
 
 <footer>
     <?php include "php/footer.php"; ?>
-
+    <?php $page = ($_GET['page']) ? $_GET['page'] : "1";//ユーザーから受け取った値を変数に入れる ?>
     <script>
         function reloadData(){
-            $.get("php/tableData.php?page=<?php echo $_GET['page'] ?>").then(
+            $.get("php/tableData.php?page=<?php echo $page ?>").then(
                 function(response){
                     $("#ajaxLoad").html(response)
                 }

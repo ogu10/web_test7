@@ -21,7 +21,7 @@
                         <a class="nav-link" href="#addForm">Registrate</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:8080/web_test7/web_test8/php/tableData2.php">Tables</a>
+                        <a class="nav-link" href="http://localhost:8080/web_test7/web_test8/php/tableData2.php" target="_blank">Tables</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#gallery">Gallery</a>

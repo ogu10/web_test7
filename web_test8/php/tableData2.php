@@ -74,7 +74,7 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
                 よく働き、よく遊ぶ仕事仲間があなたを待っています！</p>
         </div>
 
-<form name="form1" id="form1" action="../index.php" method="GET">
+<form name="form1" id="form1" action="delete.php" method="GET">
     <input type="hidden" name="deleteID" id="deleteID" value="<?php echo $deleteID ?>"></form>
 
 <table id="players_list" class="players_list table table-striped">
@@ -120,13 +120,19 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
     ?>
 
     <?php for ($x=1; $x <= $pagination ; $x++) { ?>
-        <a href="?page=<?php echo $x ?>"><?php echo $x; ?></a>
+        <?php //if($x = $_GET['page']){$key = 'active';}else{$key = '';} ?>
+        <a href="?page=<?php echo $x ?>" class="<?php echo $key; echo $_GET['page']; ?>"><?php echo $x; ?></a>
     <?php } // End of for ?>
 </div>
 </form>
         <br><br>
 </div></section>
 
+<style>
+    .active{
+        background-color: deepskyblue;
+    }
+</style>
 
 <script>
     //sort function
