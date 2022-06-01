@@ -52,9 +52,9 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
     <input type="hidden" name="deleteID" id="deleteID" value="<?php echo $deleteID ?>"></form>
 
 <table id="players_list" class="players_list table table-striped">
-    <th>No. <button class='button5' type="submit" onclick="sortFunction('No')"><i class="fa-solid fa-bars"></i></button>
-    <th>name <button class='button5' type="submit" onclick="sortFunction('name')"><i class="fa-solid fa-bars"></i></button>
-    <th>team <button class='button5' type="submit" onclick="sortFunction('Length(team)')"><i class="fa-solid fa-bars"></i></button>
+    <th>&nbsp;&nbsp; No. <!--<button class='button5' type="submit" onclick="sortFunction('No')"><i class="fa-solid fa-bars"></i></button>-->
+    <th>&nbsp;&nbsp;&nbsp;&nbsp;Name <!--<button class='button5' type="submit" onclick="sortFunction('name')"><i class="fa-solid fa-bars"></i></button>-->
+    <th>&nbsp;&nbsp;&nbsp;&nbsp;Team <!--<button class='button5' type="submit" onclick="sortFunction('Length(team)')"><i class="fa-solid fa-bars"></i></button>-->
     <th>update</th>
     <th>delete</th>
     </tr>
@@ -93,10 +93,20 @@ $page_num = $page_num->fetchColumn();
 $pagination = ceil($page_num / 6);
 ?>
 
-<?php for ($x=1; $x <= $pagination ; $x++) { ?>
-    <?php if($x == $_GET['page']){$key = 'active';}else{$key = '';} ?>
-    <a href="?page=<?php echo $x ?>" class="<?php echo $key; ?>"><?php echo $x; ?></a>
-<?php } // End of for ?>
+    <a href="?page=1">
+        <i class="fa-solid fa-angles-left"></i></a>
+    <a href="?page=<?php if($_GET['page'] > 1){echo $_GET['page']-1;}else{echo 1;} ?>">
+        <i class="fa-solid fa-angle-left"></i></a>&nbsp;
+    <?php for ($x=1; $x <= $pagination ; $x++) { ?>
+        <?php if($x == $_GET['page']){$key = 'active';}else{$key = '';} ?>
+        <a href="?page=<?php echo $x ?>" class="<?php echo $key; ?>"><?php echo $x; ?></a>
+    <?php } // End of for ?>&nbsp;
+    <a href="?page=<?php if($_GET['page'] < $pagination){echo $_GET['page']+1;}else{echo $pagination;} ?>">
+        <i class="fa-solid fa-angle-right"></i></a>
+    <a href="?page=<?php echo $pagination; ?>">
+        <i class="fa-solid fa-angles-right"></i></a>
+
+</div>
 </div>
 </form>
 

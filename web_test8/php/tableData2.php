@@ -118,12 +118,18 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
     // ページネーションの数を取得する
     $pagination = ceil($page_num / 6);
     ?>
-
+    <a href="?page=1">
+        <i class="fa-solid fa-angles-left"></i></a>
+    <a href="?page=<?php if($_GET['page'] > 1){echo $_GET['page']-1;}else{echo 1;} ?>">
+        <i class="fa-solid fa-angle-left"></i></a>&nbsp;
     <?php for ($x=1; $x <= $pagination ; $x++) { ?>
         <?php if($x == $_GET['page']){$key = 'active';}else{$key = '';} ?>
         <a href="?page=<?php echo $x ?>" class="<?php echo $key; ?>"><?php echo $x; ?></a>
-    <?php } // End of for ?>
-</div>
+    <?php } // End of for ?>&nbsp;
+    <a href="?page=<?php if($_GET['page'] < $pagination){echo $_GET['page']+1;}else{echo $pagination;} ?>">
+        <i class="fa-solid fa-angle-right"></i></a>
+    <a href="?page=<?php echo $pagination; ?>">
+        <i class="fa-solid fa-angles-right"></i></a>
 </form>
         <br><br>
 </div></section>
