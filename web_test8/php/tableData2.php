@@ -95,7 +95,7 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
         <td>
             　<?php /*$team_list = isset($value['team'])? $value['team']: "-no data-";*/
             echo $value['team']; ?></td>
-        <td>
+        <td>&nbsp;&nbsp;&nbsp;
             <?php echo "<!--<button class=`button3`>--><a href=../../edit.php?id=" . $value["id"] . ">"; ?>
             <i class="fa-solid fa-pen-nib"></i>
             <?php echo "</a>\n";

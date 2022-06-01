@@ -41,8 +41,8 @@
     <div class="container" data-aos="fade-up">
         <br><br>
         <div class="section-title">
-            <h2>Regist</h2>
-            <p>サービスや採用、メディア取材等のお問い合わせはこちらのフォームからお願いいたします。</p>
+            <h2>Pagination</h2>
+            <p>一覧表ページ切り替えのれんしゅう。まだまだ懲りずにサッカーのネタで</p>
         </div>
 
         <div class="row">

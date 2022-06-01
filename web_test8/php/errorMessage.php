@@ -24,7 +24,7 @@
 <div align="center"><h1 style="color: deepskyblue"><font face="HGP創英角ﾎﾟｯﾌﾟ体">
     <br><br><br><br><br>
 <h2>
-もうあるみたい ＞＜
+登録失敗 ＞＜
 </h2>
         </h1><h2><br><br>
 <a id="jump" href="http://localhost:8080/web_test7/web_test8/index.php?page=1">とりあえず戻っとく?</a>

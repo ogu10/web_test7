@@ -69,7 +69,7 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
         <td>
             　<?php /*$team_list = isset($value['team'])? $value['team']: "-no data-";*/
             echo $value['team']; ?></td>
-        <td>
+        <td>&nbsp;&nbsp;&nbsp;
             <?php echo "<!--<button class=`button3`>--><a href=../../edit.php?id=" . $value["id"] . ">"; ?>
             <i class="fa-solid fa-pen-nib"></i>
             <?php echo "</a>\n";
@@ -93,26 +93,31 @@ $page_num = $page_num->fetchColumn();
 $pagination = ceil($page_num / 6);
 ?>
 
-    <a href="?page=1">
+    <a href="?page=1" class="<?php if($_GET['page'] == 1){echo "disabled";} ?>">
         <i class="fa-solid fa-angles-left"></i></a>
-    <a href="?page=<?php if($_GET['page'] > 1){echo $_GET['page']-1;}else{echo 1;} ?>">
+    <a href="?page=<?php if($_GET['page'] > 1){echo $_GET['page']-1;}else{echo 1;} ?>" class="<?php if($_GET['page'] == 1){echo "disabled";} ?>">
         <i class="fa-solid fa-angle-left"></i></a>&nbsp;
     <?php for ($x=1; $x <= $pagination ; $x++) { ?>
         <?php if($x == $_GET['page']){$key = 'active';}else{$key = '';} ?>
         <a href="?page=<?php echo $x ?>" class="<?php echo $key; ?>"><?php echo $x; ?></a>
     <?php } // End of for ?>&nbsp;
-    <a href="?page=<?php if($_GET['page'] < $pagination){echo $_GET['page']+1;}else{echo $pagination;} ?>">
+    <a href="?page=<?php if($_GET['page'] < $pagination){echo $_GET['page']+1;}else{echo $pagination;} ?>" class="<?php if($_GET['page'] == $pagination){echo "disabled";} ?>">
         <i class="fa-solid fa-angle-right"></i></a>
-    <a href="?page=<?php echo $pagination; ?>">
+    <a href="?page=<?php echo $pagination; ?>" class="<?php if($_GET['page'] == $pagination){echo "disabled";} ?>">
         <i class="fa-solid fa-angles-right"></i></a>
 
 </div>
+<div align="right">items: <?php echo $page_num; ?></div>
 </div>
 </form>
 
 <style>
     .active{
         background-color: yellow;
+    }
+    a.disabled{
+        pointer-events: none;
+        color: dimgray;
     }
 </style>
 
