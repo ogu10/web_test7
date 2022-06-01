@@ -72,12 +72,7 @@
                         <option value="1">Premium League
                         </select></font>
                     </div>
-                    <br>
-                    <div class="my-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
-                    </div>
+                    <br><br>
                     <div class="text-center"><button type="submit">Kick off!</button></div>
                 </form>
             </div>
