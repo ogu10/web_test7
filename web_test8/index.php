@@ -62,13 +62,15 @@
                         <input type="text" class="form-control" name="name2" id="name2" placeholder="Name">
                     </div>
                     <div class="form-group mt-3" align="center">
-                        <font color=lime><b><br>
-                        <input type="radio" name="league_id2" value="5">Ligue 1 &nbsp;
-                        <input type="radio" name="league_id2" value="4">La Liga<br>
-                        <input type="radio" name="league_id2" value="2">Serie A &nbsp;
-                        <input type="radio" name="league_id2" value="3">Bundesliga<br>
-                        <input type="radio" name="league_id2" value="1" checked>Premium League
-                        </b></font>
+                        <font color=lime><br>
+                        <select name="league_id2">
+                        <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--League--
+                        <option value="5">Ligue 1
+                        <option value="4">La Liga
+                        <option value="2">Serie A
+                        <option value="3">Bundesliga
+                        <option value="1">Premium League
+                        </select></font>
                     </div>
                     <br>
                     <div class="my-3">
@@ -79,6 +81,8 @@
                     <div class="text-center"><button type="submit">Kick off!</button></div>
                 </form>
             </div>
+
+<!--            <div class="col-lg-1"></div>-->
 
             <div class="col-lg-8">
                 <div id="ajaxLoad"></div>

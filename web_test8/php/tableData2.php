@@ -120,8 +120,8 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
     ?>
 
     <?php for ($x=1; $x <= $pagination ; $x++) { ?>
-        <?php //if($x = $_GET['page']){$key = 'active';}else{$key = '';} ?>
-        <a href="?page=<?php echo $x ?>" class="<?php echo $key; echo $_GET['page']; ?>"><?php echo $x; ?></a>
+        <?php if($x == $_GET['page']){$key = 'active';}else{$key = '';} ?>
+        <a href="?page=<?php echo $x ?>" class="<?php echo $key; ?>"><?php echo $x; ?></a>
     <?php } // End of for ?>
 </div>
 </form>
@@ -130,7 +130,7 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
 
 <style>
     .active{
-        background-color: deepskyblue;
+        background-color: yellow;
     }
 </style>
 

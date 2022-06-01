@@ -94,11 +94,17 @@ $pagination = ceil($page_num / 6);
 ?>
 
 <?php for ($x=1; $x <= $pagination ; $x++) { ?>
-<a href="?page=<?php echo $x ?>"><?php echo $x; ?></a>
+    <?php if($x == $_GET['page']){$key = 'active';}else{$key = '';} ?>
+    <a href="?page=<?php echo $x ?>" class="<?php echo $key; ?>"><?php echo $x; ?></a>
 <?php } // End of for ?>
 </div>
 </form>
 
+<style>
+    .active{
+        background-color: yellow;
+    }
+</style>
 
 <script>
     //sort function
