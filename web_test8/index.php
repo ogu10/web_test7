@@ -36,7 +36,7 @@
     include "php/header.php"; ?>
 </header>
 
-<!-- ======= Contact Section ======= -->
+<!-- ======= Add Form & Table Section ======= -->
 <section id="contact" class="contact section-bg">
     <div class="container" data-aos="fade-up">
         <br><br>
@@ -82,8 +82,6 @@
                 </form>
             </div>
 
-<!--            <div class="col-lg-1"></div>-->
-
             <div class="col-lg-8">
                 <div id="ajaxLoad"></div>
             </div>
@@ -92,7 +90,7 @@
         <br>
     </div>
 </section>
-<!-- ======= Contact Section END ======= -->
+<!-- ======= Add Form & Table Section END ======= -->
 
 <footer>
     <?php include "php/footer.php"; ?>
