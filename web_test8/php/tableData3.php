@@ -1,6 +1,4 @@
 <head>
-    <!--    <link rel="stylesheet" href="/web_test3/pages/test7/test4.css">
-        <link rel="stylesheet" href="/web_test3/pages/test7/Mr_button.css">-->
     <script src="https://kit.fontawesome.com/2b5ebdc171.js" crossorigin="anonymous"></script>
 </head>
 
@@ -13,7 +11,7 @@ $searchName = isset($_GET["search_word"])? $_GET["search_word"] : '';
 $searchTeam = isset($_GET["team_belongings"])? $_GET["team_belongings"] : [];
 $elements = is_array($searchTeam)? count($searchTeam): '0';
 $deleteID = isset($_GET["deleteID"])? $_GET["deleteID"]: '0000';
-/*echo "<input type=hidden id='elementNumber' value='$elements'> ";*/
+
 
 // GETで現在のページ数を取得する（未入力の場合は1を挿入）
 if (isset($_GET['page'])) {$page = (int)$_GET['page'];} else {$page = 1;}
@@ -107,7 +105,7 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
         <i class="fa-solid fa-angles-right"></i></a>
 
 </div>
-<div align="right">items: <?php echo $page_num; ?></div>
+<div align="left">items: <?php echo $page_num; ?></div>
 </div>
 </form>
 

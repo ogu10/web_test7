@@ -62,7 +62,7 @@
             <div class="col-lg-4">
                 <br>
                     <form action="index2.php" method="get" role="form" class="php-email-form"><!--not post but get request for test-->
-
+                        <h2 align="center">Search Func.</h2><br>
                         <!--<input type="text" id="search_word" name="search_word" placeholder="search name"  value="<?php /*echo $searchName */?>">-->
                         <input type="hidden" name="sort" id="searchSort" value="<?php echo $sortOrder ?>">
                         <input type="hidden" name="column" id="searchColumn" value="<?php echo $sortBy ?>">
@@ -78,7 +78,7 @@
                         </div>
                             <div class="form-group mt-3">
                                 <input type="text" class="form-control" name="name2" id="name2" placeholder="Name">
-                            </div><br><br>
+                            </div><br>
                         <div class="text-center"><button type="submit">
                                 <i class="fa-regular fa-futbol"></i> Search it！</button></div>
                     </form><br><br>
@@ -96,13 +96,13 @@
 
     <style>
         .section-bg2 {
-            background-color: lightgreen;
+            background:rgba(255,255,205,0.3);
         }
     </style>
 
     <script>
         function reloadData(){
-            $.get("tableData.php?page=<?php echo $page ?>").then(
+            $.get("tableData3.php?page=<?php echo $page ?>").then(
                 function(response){
                     $("#ajaxLoad2").html(response)
                 }
