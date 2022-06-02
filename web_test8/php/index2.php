@@ -37,7 +37,7 @@
     $sortBy = isset($_GET["column"])? $_GET["column"] : "id";
     $sortOrder = isset($_GET["sort"])? $_GET["sort"] : "DESC";
     $searchName = isset($_GET["name2"])? $_GET["name2"] : '';
-    $searchTeam = isset($_GET["team_belongings"])? $_GET["team_belongings"] : [];
+    $searchTeam = isset($_GET["team2"])? $_GET["team2"] : [];
     $elements = is_array($searchTeam)? count($searchTeam): '0';
     $deleteID = isset($_GET["deleteID"])? $_GET["deleteID"]: '0000';
 
@@ -46,6 +46,16 @@
     $teams = $dbh->query('SELECT DISTINCT `team` FROM players ORDER BY Length(`team`) DESC LIMIT 15');
     $result_t = $teams->fetchAll(PDO::FETCH_ASSOC);
 
+    $array = '';
+    $y = 1;
+    foreach ($searchTeam as $teams):
+        $array .= "'".$teams."'";
+        if($y < $elements){
+            $array .= ", ";}
+        $y ++;
+    endforeach;
+
+    $_SESSION['searchTeam'] = $array;
 
     include "header.php"; ?>
 </header>
@@ -62,7 +72,7 @@
         <div class="row">
 
             <div class="col-lg-8">
-                <div id="ajaxLoad2"></div>
+                <div id="ajaxLoad2"></div><?php echo $array; ?>
             </div>
 
             <div class="col-lg-4">
@@ -84,7 +94,7 @@
                                 <!--<input type="team2" class="form-control" name="team2" id="team2" placeholder="Team" value="<?php /*echo $searchTeam */?>">-->
                                 <div class="container form-group mt-3 mt-md-0 col-md-12">
                                     <div class="trigger">
-                                        <input id="input" type="text" class="form-control" value="" placeholder="select teams" disabled>
+                                        <input id="input" type="text" class="form-control" placeholder="select teams" value="" disabled>
                                     </div>
 
                                     <!-- Modal -->
@@ -98,7 +108,7 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <?php $x=1; foreach ($result_t as $value_t): ?>
-                                                    <input type="checkbox" name="team_belongings[]" value="<?php echo $value_t['team'] ?>" id="checkbox"
+                                                    <input type="checkbox" name="team2[]" value="<?php echo $value_t['team'] ?>" id="checkbox"
                                                         <?php if(is_array($searchTeam)){if(in_array($value_t['team'], $searchTeam)){echo "checked";}} ?>>
                                                     <?php if($value_t['team'] == ''){echo "-no data-";}else{echo $value_t['team'];} ?><?php if($x % 5 ==0){echo "<br>";}?><?php $x++ ?>
                                                     <?php endforeach ?>

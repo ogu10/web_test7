@@ -5,12 +5,13 @@
 
 
 <?php
+session_start();
 include 'connection.php';
 $sortBy = isset($_GET["column"])? $_GET["column"] : "id";
 $sortOrder = isset($_GET["sort"])? $_GET["sort"] : "DESC";
 $searchN0 = isset($_GET["no2"])? $_GET["no2"] : '';
 $searchName = isset($_GET["name2"])? $_GET["name2"] : '';
-$searchTeam = isset($_GET["team2"])? $_GET["team2"] : [];
+$searchTeam = isset($_GET["team2"])? $_GET["team2"] : '';
 $elements = is_array($searchTeam)? count($searchTeam): '0';
 $deleteID = isset($_GET["deleteID"])? $_GET["deleteID"]: '0000';
 
@@ -19,14 +20,7 @@ if (isset($_GET['page'])) {$page = (int)$_GET['page'];} else {$page = 1;}
 // スタートのポジションを計算する
 if ($page > 1) {$start = ($page * 6) - 6;} else {$start = 0;}
 
-$array = '';
-$y = 1;
-foreach ($searchTeam as $teams):
-    $array .= "'".$teams."'";
-    if($y < $elements){
-        $array .= ", ";}
-    $y ++;
-endforeach;
+$array = $_SESSION['searchTeam'];
 
 
 $del = $dbh->prepare('DELETE FROM players WHERE id = :id');
@@ -92,7 +86,11 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
 <div align="center">
     <?php
     // resultテーブルのデータ件数を取得する
-    $page_num = $dbh->prepare("SELECT COUNT(*) id FROM players WHERE `name` LIKE '%$searchName%'");
+    if($array == ''){
+        $page_num = $dbh->prepare("SELECT COUNT(*) id FROM players WHERE `name` LIKE '%$searchName%' ORDER BY $sortBy $sortOrder, Length(team) LIMIT {$start}, 6");
+    }else{
+        $page_num = $dbh->prepare("SELECT COUNT(*) id FROM players WHERE `name` LIKE '%$searchName%' AND `team` IN ($array) ORDER BY $sortBy $sortOrder, Length(team) LIMIT {$start}, 6");}
+
     $page_num->execute();
     $page_num = $page_num->fetchColumn();
     // ページネーションの数を取得する
