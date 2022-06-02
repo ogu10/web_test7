@@ -41,6 +41,12 @@
     $elements = is_array($searchTeam)? count($searchTeam): '0';
     $deleteID = isset($_GET["deleteID"])? $_GET["deleteID"]: '0000';
 
+    include 'connection.php';
+    $result_t = 0;
+    $teams = $dbh->query('SELECT DISTINCT `team` FROM players ORDER BY Length(`team`) DESC LIMIT 15');
+    $result_t = $teams->fetchAll(PDO::FETCH_ASSOC);
+
+
     include "header.php"; ?>
 </header>
 
@@ -66,16 +72,49 @@
                         <!--<input type="text" id="search_word" name="search_word" placeholder="search name"  value="<?php /*echo $searchName */?>">-->
 
                         <div class="row">
-                            <div class="col-md-6 form-group">
+                            <div class="col-md-4 form-group">
                                 <input type="text" name="no2" class="form-control" id="no2" placeholder="No.">
                             </div>
-                            <div class="col-md-6 form-group mt-3 mt-md-0">
-                                <input type="team2" class="form-control" name="team2" id="team2" placeholder="Team"">
-                            </div>
-                        </div>
-                            <div class="form-group mt-3">
+
+                            <div class="col-md-8 form-group">
                                 <input type="text" class="form-control" name="name2" id="name2" placeholder="Name" value="<?php echo $searchName ?>">
-                            </div><br>
+                            </div>
+
+                            <!--<div class="col-md-6 form-group mt-3 mt-md-0">-->
+                                <!--<input type="team2" class="form-control" name="team2" id="team2" placeholder="Team" value="<?php /*echo $searchTeam */?>">-->
+                                <div class="container form-group mt-3 mt-md-0 col-md-12">
+                                    <div class="trigger">
+                                        <input id="input" type="text" class="form-control" value="" placeholder="select teams" disabled>
+                                    </div>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content" style="margin-top:150px">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <?php $x=1; foreach ($result_t as $value_t): ?>
+                                                    <input type="checkbox" name="team_belongings[]" value="<?php echo $value_t['team'] ?>" id="checkbox"
+                                                        <?php if(is_array($searchTeam)){if(in_array($value_t['team'], $searchTeam)){echo "checked";}} ?>>
+                                                    <?php if($value_t['team'] == ''){echo "-no data-";}else{echo $value_t['team'];} ?><?php if($x % 5 ==0){echo "<br>";}?><?php $x++ ?>
+                                                    <?php endforeach ?>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php include "optionPages/popup/modal3.php"; ?>
+                            <!--</div>-->
+                        </div>
+                            <br>
                         <div class="text-center"><button type="submit">
                                 <i class="fa-regular fa-futbol"></i> Search it！</button></div>
                     </form><br><br>
