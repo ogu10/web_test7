@@ -36,7 +36,7 @@
 
     $sortBy = isset($_GET["column"])? $_GET["column"] : "id";
     $sortOrder = isset($_GET["sort"])? $_GET["sort"] : "DESC";
-    $searchName = isset($_GET["search_word"])? $_GET["search_word"] : '';
+    $searchName = isset($_GET["name2"])? $_GET["name2"] : '';
     $searchTeam = isset($_GET["team_belongings"])? $_GET["team_belongings"] : [];
     $elements = is_array($searchTeam)? count($searchTeam): '0';
     $deleteID = isset($_GET["deleteID"])? $_GET["deleteID"]: '0000';
@@ -70,11 +70,11 @@
                                 <input type="text" name="no2" class="form-control" id="no2" placeholder="No.">
                             </div>
                             <div class="col-md-6 form-group mt-3 mt-md-0">
-                                <input type="team2" class="form-control" name="team2" id="team2" placeholder="Team">
+                                <input type="team2" class="form-control" name="team2" id="team2" placeholder="Team"">
                             </div>
                         </div>
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="name2" id="name2" placeholder="Name">
+                                <input type="text" class="form-control" name="name2" id="name2" placeholder="Name" value="<?php echo $searchName ?>">
                             </div><br>
                         <div class="text-center"><button type="submit">
                                 <i class="fa-regular fa-futbol"></i> Search it！</button></div>
@@ -100,7 +100,7 @@
     <script>
         function reloadData(){
             /*$.get("tableData3.php?sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>").then(*/
-            $.get("tableData3.php?sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>").then(
+            $.get("tableData3.php?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>").then(
                 function(response){
                     $("#ajaxLoad2").html(response)
                 }
