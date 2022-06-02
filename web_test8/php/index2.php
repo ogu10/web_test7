@@ -64,9 +64,6 @@
                     <form action="index2.php" method="get" role="form" class="php-email-form"><!--not post but get request for test-->
                         <h2 align="center">Search Func.</h2><br>
                         <!--<input type="text" id="search_word" name="search_word" placeholder="search name"  value="<?php /*echo $searchName */?>">-->
-                        <input type="hidden" name="sort" id="searchSort" value="<?php echo $sortOrder ?>">
-                        <input type="hidden" name="column" id="searchColumn" value="<?php echo $sortBy ?>">
-                        <input type="hidden" name="deleteID" id="deleteID" value="<?php echo $deleteID ?>">
 
                         <div class="row">
                             <div class="col-md-6 form-group">
@@ -102,7 +99,8 @@
 
     <script>
         function reloadData(){
-            $.get("tableData3.php?page=<?php echo $page ?>").then(
+            /*$.get("tableData3.php?sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>").then(*/
+            $.get("tableData3.php?sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>").then(
                 function(response){
                     $("#ajaxLoad2").html(response)
                 }
