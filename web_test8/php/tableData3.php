@@ -20,7 +20,7 @@ if (isset($_GET['page'])) {$page = (int)$_GET['page'];} else {$page = 1;}
 // スタートのポジションを計算する
 if ($page > 1) {$start = ($page * 6) - 6;} else {$start = 0;}
 
-$array = $_SESSION['searchTeam'];
+$array = isset($_SESSION['searchTeam'])? $_SESSION['searchTeam'] : '';
 
 
 $del = $dbh->prepare('DELETE FROM players WHERE id = :id');
@@ -87,9 +87,9 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
     <?php
     // resultテーブルのデータ件数を取得する
     if($array == ''){
-        $page_num = $dbh->prepare("SELECT COUNT(*) id FROM players WHERE `name` LIKE '%$searchName%' ORDER BY $sortBy $sortOrder, Length(team) LIMIT {$start}, 6");
+        $page_num = $dbh->prepare("SELECT COUNT(*) id FROM players WHERE `name` LIKE '%$searchName%'");
     }else{
-        $page_num = $dbh->prepare("SELECT COUNT(*) id FROM players WHERE `name` LIKE '%$searchName%' AND `team` IN ($array) ORDER BY $sortBy $sortOrder, Length(team) LIMIT {$start}, 6");}
+        $page_num = $dbh->prepare("SELECT COUNT(*) id FROM players WHERE `name` LIKE '%$searchName%' AND `team` IN ($array)");}
 
     $page_num->execute();
     $page_num = $page_num->fetchColumn();

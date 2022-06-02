@@ -72,7 +72,7 @@
         <div class="row">
 
             <div class="col-lg-8">
-                <div id="ajaxLoad2"></div><?php echo $array; ?>
+                <div id="ajaxLoad2"></div>search words: <?php echo $array; ?>
             </div>
 
             <div class="col-lg-4">
