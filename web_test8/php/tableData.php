@@ -2,6 +2,7 @@
 <!--    <link rel="stylesheet" href="/web_test3/pages/test7/test4.css">
     <link rel="stylesheet" href="/web_test3/pages/test7/Mr_button.css">-->
     <script src="https://kit.fontawesome.com/2b5ebdc171.js" crossorigin="anonymous"></script>
+    <link href="css/buttonMaster.css" rel="stylesheet">
 </head>
 
 
@@ -51,10 +52,16 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
 <form name="form1" id="form1" action="php/delete.php" method="GET">
     <input type="hidden" name="deleteID" id="deleteID" value="<?php echo $deleteID ?>"></form>
 
+<form name="form2" id="form2" action="index.php" method="GET"><!--not post but get just for test-->
+    <input type="hidden" name="sort" id="searchSort" value="<?php echo $sortOrder ?>">
+    <input type="hidden" name="column" id="searchColumn" value="<?php echo $sortBy ?>">
+    <input type="hidden" name="deleteID" id="deleteID" value="<?php echo $deleteID ?>">
+</form>
+
 <table id="players_list" class="players_list table table-striped">
-    <th>&nbsp;&nbsp; No. <!--<button class='button5' type="submit" onclick="sortFunction('No')"><i class="fa-solid fa-bars"></i></button>-->
-    <th>&nbsp;&nbsp;&nbsp;&nbsp;Name <!--<button class='button5' type="submit" onclick="sortFunction('name')"><i class="fa-solid fa-bars"></i></button>-->
-    <th>&nbsp;&nbsp;&nbsp;&nbsp;Team <!--<button class='button5' type="submit" onclick="sortFunction('Length(team)')"><i class="fa-solid fa-bars"></i></button>-->
+    <th>&nbsp;&nbsp; No. <button class='button5' type="submit" onclick="sortFunction('No')"><i class="fa-solid fa-bars"></i></button>
+    <th>&nbsp;&nbsp;&nbsp;&nbsp;Name <button class='button5' type="submit" onclick="sortFunction('name')"><i class="fa-solid fa-bars"></i></button>
+    <th>&nbsp;&nbsp;&nbsp;&nbsp;Team <button class='button5' type="submit" onclick="sortFunction('Length(team)')"><i class="fa-solid fa-bars"></i></button>
     <th>update</th>
     <th>delete</th>
     </tr>
@@ -93,17 +100,17 @@ $page_num = $page_num->fetchColumn();
 $pagination = ceil($page_num / 6);
 ?>
 
-    <a href="?page=1" class="<?php if($_GET['page'] == 1){echo "disabled";} ?>">
+    <a href="?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=1" class="<?php if($page == 1){echo "disabled";} ?>">
         <i class="fa-solid fa-angles-left"></i></a>
-    <a href="?page=<?php if($_GET['page'] > 1){echo $_GET['page']-1;}else{echo 1;} ?>" class="<?php if($_GET['page'] == 1){echo "disabled";} ?>">
+    <a href="?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php if($page > 1){echo $page-1;}else{echo 1;} ?>" class="<?php if($page == 1){echo "disabled";} ?>">
         <i class="fa-solid fa-angle-left"></i></a>&nbsp;
     <?php for ($x=1; $x <= $pagination ; $x++) { ?>
-        <?php if($x == $_GET['page']){$key = 'active';}else{$key = '';} ?>
-        <a href="?page=<?php echo $x ?>" class="<?php echo $key; ?>"><?php echo $x; ?></a>
+        <?php if($x == $page){$key = 'active';}else{$key = '';} ?>
+        <a href="?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $x ?>" class="<?php echo $key; ?>"><?php echo $x; ?></a>
     <?php } // End of for ?>&nbsp;
-    <a href="?page=<?php if($_GET['page'] < $pagination){echo $_GET['page']+1;}else{echo $pagination;} ?>" class="<?php if($_GET['page'] == $pagination){echo "disabled";} ?>">
+    <a href="?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php if($page < $pagination){echo $page+1;}else{echo $pagination;} ?>" class="<?php if($page == $pagination){echo "disabled";} ?>">
         <i class="fa-solid fa-angle-right"></i></a>
-    <a href="?page=<?php echo $pagination; ?>" class="<?php if($_GET['page'] == $pagination){echo "disabled";} ?>">
+    <a href="?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $pagination; ?>" class="<?php if($page == $pagination){echo "disabled";} ?>">
         <i class="fa-solid fa-angles-right"></i></a>
 
 </div>
@@ -131,7 +138,12 @@ $pagination = ceil($page_num / 6);
             else
             {var sort = "ASC";}}
         else {
-            var sort = "ASC";}}
+            var sort = "ASC";}
+
+        document.getElementById("searchSort").setAttribute("value",sort);
+        document.getElementById("searchColumn").setAttribute("value",param);
+        document.form2.submit();
+    }
 
 
     //deleteing confirmation

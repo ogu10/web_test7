@@ -111,7 +111,7 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
         <i class="fa-solid fa-angles-right"></i></a>
 
 </div>
-<div align="left">items: <?php echo $page_num; ?></div>
+<div align="right">items: <?php echo $page_num; ?></div>
 </div>
 </form>
 

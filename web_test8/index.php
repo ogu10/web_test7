@@ -33,6 +33,15 @@
         $_SESSION['league_id'] = $_POST['league_id'];
         header('Location: optionPages/addFunc.php');
     }
+
+    $sortBy = isset($_GET["column"])? $_GET["column"] : "id";
+    $sortOrder = isset($_GET["sort"])? $_GET["sort"] : "DESC";
+    $searchName = isset($_GET["name2"])? $_GET["name2"] : '';
+    $searchTeam = isset($_GET["team2"])? $_GET["team2"] : [];
+    $elements = is_array($searchTeam)? count($searchTeam): '0';
+    $deleteID = isset($_GET["deleteID"])? $_GET["deleteID"]: '0000';
+
+
     include "php/header.php"; ?>
 </header>
 
@@ -92,7 +101,7 @@
     <?php $page = ($_GET['page']) ? $_GET['page'] : "1";//ユーザーから受け取った値を変数に入れる ?>
     <script>
         function reloadData(){
-            $.get("php/tableData.php?page=<?php echo $page ?>").then(
+            $.get("php/tableData.php?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>").then(
                 function(response){
                     $("#ajaxLoad").html(response)
                 }
