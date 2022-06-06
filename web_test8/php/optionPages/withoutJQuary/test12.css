@@ -1,0 +1,62 @@
+.tab_area .tab_btn_parent{
+    box-sizing: border-box;
+    display: table;
+    table-layout: fixed;
+    width: 60%;
+    border-bottom: 2px solid #262626;
+}
+
+.tab_area .tab_btn_parent .tab_btn_children{
+    box-sizing: border-box;
+    display: table-cell;
+    vertical-align:middle;
+    text-align: center;
+    padding: 5px;
+    background-color: #919191;
+    color: #FFF;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tab_area .tab_btn_parent .tab_btn_children.radius{
+    border-radius: 10px 10px 0 0;
+}
+
+.tab_area .tab_btn_parent .tab_btn_children.selected{
+    position: relative;
+    background-color: #262626;
+}
+
+.tab_area .tab_btn_parent .tab_btn_children.rolling.selected:before{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -25px;
+    content: '▼';
+    font-size: 20px;
+    color: #262626;
+    animation: roll 2s linear infinite;
+}
+
+.tab_area .tab_show_parent{
+    padding: 10px;
+    background-color: #fff;
+    width: 58.3%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.tab_area .tab_show_parent > div{
+    display: none;
+}
+
+@keyframes roll{
+    from {
+        transform: perspective(500px) rotateY(0deg);
+    }
+    50%{
+        transform: perspective(500px) rotateY(180deg);
+    }
+    to{
+        transform: perspective(500px) rotateY(360deg);
+    }
+}
