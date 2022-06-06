@@ -177,9 +177,5 @@
         });
     </script>
 
-    <!--    --><?php
-    /*    if(!isset($_SESSION["user_name"])) {
-            header("Location: optionPages/ban.php");} */?>
-
 </footer>
 </html>
