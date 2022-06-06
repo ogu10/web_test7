@@ -166,7 +166,6 @@
         }
 
         function reloadData(){
-            /*$.get("tableData3.php?sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>").then(*/
             $.get("tableData3.php?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>&listNum=<?php echo $listNum ?>").then(
                 function(response){
                     $("#ajaxLoad2").html(response)
