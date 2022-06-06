@@ -81,7 +81,7 @@
 
             <div class="col-lg-4">
                 <br>
-                    <form action="index2.php" method="get" role="form" class="php-email-form"><!--not post but get request for test-->
+                    <form action="index2.php" name="form4" id="form4" method="get" role="form" class="php-email-form"><!--not post but get request for test-->
                         <h2 align="center">Search Func.</h2><br>
                         <!--<input type="text" id="search_word" name="search_word" placeholder="search name"  value="<?php /*echo $searchName */?>">-->
 
@@ -126,8 +126,8 @@
                                     </div>
                                     <br>
                                     <div align="right">
-                                    <select name="listNum"> <!--onChange="location.href=value;"-->
-                                        <option value="">List Num</option>
+                                    <select name="listNum" onchange='ListNum()'> <!--onChange="location.href=value;"-->
+                                        <option value="6">List Num</option>
                                         <option value="4">4</option>
                                         <option value="6">6</option>
                                         <option value="8">8</option>
@@ -140,7 +140,7 @@
                         </div>
                             <br>
                         <div class="text-center"><button type="submit">
-                                <i class="fa-regular fa-futbol"></i> Search it！</button></div>
+                                <i class="fa-regular fa-futbol"></i>Search！</button></div>
                     </form><br><br>
             </div>
 
@@ -161,6 +161,10 @@
     </style>
 
     <script>
+        function ListNum(){
+            document.form4.submit();
+        }
+
         function reloadData(){
             /*$.get("tableData3.php?sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>").then(*/
             $.get("tableData3.php?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>&listNum=<?php echo $listNum ?>").then(

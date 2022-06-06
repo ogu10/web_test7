@@ -13,7 +13,7 @@ $searchN0 = isset($_GET["no2"])? $_GET["no2"] : '';
 $searchName = isset($_GET["name2"])? $_GET["name2"] : '';
 $searchTeam = isset($_GET["team2"])? $_GET["team2"] : '';
 $elements = is_array($searchTeam)? count($searchTeam): '0';
-$listNum = isset($_GET["listNum"])? $_GET["listNum"] : '6';
+$listNum = isset($_GET["listNum"])? $_GET["listNum"] : 6;
 $deleteID = isset($_GET["deleteID"])? $_GET["deleteID"]: '0000';
 
 // GETで現在のページ数を取得する（未入力の場合は1を挿入）
@@ -113,6 +113,7 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
         <i class="fa-solid fa-angles-right"></i></a>
 
 </div>
+<div align="right">items: </div>
 <div align="right">Now showing: <?php echo ($page * $listNum) - $listNum +1; ?>~<?php if($page * $listNum < $page_num){echo $page * $listNum;}
     else{echo $page_num;}?> /<?php echo $page_num; ?></div>
 </div>
