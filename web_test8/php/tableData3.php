@@ -113,7 +113,6 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
         <i class="fa-solid fa-angles-right"></i></a>
 
 </div>
-<div align="right">items: </div>
 <div align="right">Now showing: <?php echo ($page * $listNum) - $listNum +1; ?>~<?php if($page * $listNum < $page_num){echo $page * $listNum;}
     else{echo $page_num;}?> /<?php echo $page_num; ?></div>
 </div>
