@@ -1,26 +1,24 @@
-<head>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <link rel="icon" type="image/png" sizes="192x192" href="http://localhost:8080/web_test7/web_test8/images/android-chrome-180x180.png">
-</head>
+<!-- コメント送信フォーム -->
+<form method="post" action="/comment/" id="commentSubmit">
+    <textarea name="comment" rows="3" id="commentInput"></textarea>
+    <input type="submit" value="コメントする">
+</form>
 
-
-
-<div id="form">
-    <input type="text">
-</div>
-<input type="button" value="+" id="addForm">
-
-
-
+<!-- Jqueryの読み込み -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<!-- 処理を記入 -->
 <script>
     $(function(){
-        $('#addForm').click(function(){
-            var inputCount = $('#form input:last-child').attr('data-inputCount');
-            var next_num = parseInt(inputCount) + 1;
-            if(next_num == 10/* ←上限 */) {
-                $('#addForm').remove();
-            } else {
-                $('#form').append('<input type="text" data-inputCount="' + next_num + '">');
+        //テキストエリアがアクティブの状態にキーが押されたらイベントを発火
+        $('#commentInput').keydown(function(e){
+            //ctrlキーが押されてる状態か判定
+            if(event.ctrlKey){
+                //押されたキー（e.keyCode）が13（Enter）か　そしてテキストエリアに何かが入力されているか判定
+                if(e.keyCode === 13 && $(this).val()){
+                    //フォームを送信
+                    $('#commentSubmit').submit();
+                    return false;
+                }
             }
         });
     });

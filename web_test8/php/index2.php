@@ -156,7 +156,7 @@
 
     <style>
         .section-bg2 {
-            background:rgba(255,255,205,0.3);
+            background:rgba(235,255,255,0.3);
         }
     </style>
 
