@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Bootstrap Trial</title>
     <link rel="icon" type="image/png" sizes="192x192" href="../images/android-chrome-192x192.png">
+
+
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="../css/styleSheet.css" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -39,6 +42,7 @@
     $searchName = isset($_GET["name2"])? $_GET["name2"] : '';
     $searchTeam = isset($_GET["team2"])? $_GET["team2"] : [];
     $elements = is_array($searchTeam)? count($searchTeam): '0';
+    $listNum = isset($_GET["listNum"])? $_GET["listNum"] : '6';
     $deleteID = isset($_GET["deleteID"])? $_GET["deleteID"]: '0000';
 
     include 'connection.php';
@@ -120,6 +124,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <br>
+                                    <div align="right">
+                                    <select name="listNum"> <!--onChange="location.href=value;"-->
+                                        <option value="">List Num</option>
+                                        <option value="4">4</option>
+                                        <option value="6">6</option>
+                                        <option value="8">8</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                    </div>
                                 </div>
                                 <?php include "optionPages/popup/modal3.php"; ?>
                             <!--</div>-->
@@ -149,7 +163,7 @@
     <script>
         function reloadData(){
             /*$.get("tableData3.php?sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>").then(*/
-            $.get("tableData3.php?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>").then(
+            $.get("tableData3.php?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>&listNum=<?php echo $listNum ?>").then(
                 function(response){
                     $("#ajaxLoad2").html(response)
                 }

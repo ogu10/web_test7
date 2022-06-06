@@ -13,12 +13,13 @@ $searchN0 = isset($_GET["no2"])? $_GET["no2"] : '';
 $searchName = isset($_GET["name2"])? $_GET["name2"] : '';
 $searchTeam = isset($_GET["team2"])? $_GET["team2"] : '';
 $elements = is_array($searchTeam)? count($searchTeam): '0';
+$listNum = isset($_GET["listNum"])? $_GET["listNum"] : '6';
 $deleteID = isset($_GET["deleteID"])? $_GET["deleteID"]: '0000';
 
 // GETで現在のページ数を取得する（未入力の場合は1を挿入）
 if (isset($_GET['page'])) {$page = (int)$_GET['page'];} else {$page = 1;}
 // スタートのポジションを計算する
-if ($page > 1) {$start = ($page * 6) - 6;} else {$start = 0;}
+if ($page > 1) {$start = ($page * $listNum) - $listNum;} else {$start = 0;}
 
 $array = isset($_SESSION['searchTeam'])? $_SESSION['searchTeam'] : '';
 
@@ -27,9 +28,9 @@ $del = $dbh->prepare('DELETE FROM players WHERE id = :id');
 $del->execute(array(':id' => $deleteID));
 /*echo $deleteID;*/
 if($array == ''){
-    $query =  "SELECT * FROM players WHERE `name` LIKE '%$searchName%' ORDER BY $sortBy $sortOrder, Length(team) LIMIT {$start}, 6";
+    $query =  "SELECT * FROM players WHERE `name` LIKE '%$searchName%' ORDER BY $sortBy $sortOrder, Length(team) LIMIT {$start}, $listNum";
 }else{
-    $query =  "SELECT * FROM players WHERE `name` LIKE '%$searchName%' AND `team` IN ($array) ORDER BY $sortBy $sortOrder, Length(team) LIMIT {$start}, 6";}
+    $query =  "SELECT * FROM players WHERE `name` LIKE '%$searchName%' AND `team` IN ($array) ORDER BY $sortBy $sortOrder, Length(team) LIMIT {$start}, $listNum";}
 /*var_dump($query);*/
 
 $result = 0;
@@ -49,6 +50,7 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
 <input type="hidden" name="sort" id="searchSort" value="<?php echo $sortOrder ?>">
 <input type="hidden" name="column" id="searchColumn" value="<?php echo $sortBy ?>">
 <input type="hidden" name="deleteID" id="deleteID" value="<?php echo $deleteID ?>">
+    <input type="hidden" name="listNum" id="listNum" value="<?php echo $listNum ?>">
 </form>
 
 <table id="players_list" class="players_list table table-striped">
@@ -94,24 +96,25 @@ $id_max = intval($dbh->query("SELECT max(id) FROM players")->fetchColumn());
     $page_num->execute();
     $page_num = $page_num->fetchColumn();
     // ページネーションの数を取得する
-    $pagination = ceil($page_num / 6);
+    $pagination = ceil($page_num / $listNum);
     ?>
 
-    <a href="?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=1" class="<?php if($page == 1){echo "disabled";} ?>">
+    <a href="?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=1&listNum=<?php echo $listNum ?>" class="<?php if($page == 1){echo "disabled";} ?>">
         <i class="fa-solid fa-angles-left"></i></a>
-    <a href="?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php if($page > 1){echo $page-1;}else{echo 1;} ?>" class="<?php if($page == 1){echo "disabled";} ?>">
+    <a href="?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php if($page > 1){echo $page-1;}else{echo 1;} ?>&listNum=<?php echo $listNum ?>" class="<?php if($page == 1){echo "disabled";} ?>">
         <i class="fa-solid fa-angle-left"></i></a>&nbsp;
     <?php for ($x=1; $x <= $pagination ; $x++) { ?>
         <?php if($x == $page){$key = 'active';}else{$key = '';} ?>
-        <a href="?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $x ?>" class="<?php echo $key; ?>"><?php echo $x; ?></a>
+        <a href="?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $x ?>&listNum=<?php echo $listNum ?>" class="<?php echo $key; ?>"><?php echo $x; ?></a>
     <?php } // End of for ?>&nbsp;
-    <a href="?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php if($page < $pagination){echo $page+1;}else{echo $pagination;} ?>" class="<?php if($page == $pagination){echo "disabled";} ?>">
+    <a href="?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php if($page < $pagination){echo $page+1;}else{echo $pagination;} ?>&listNum=<?php echo $listNum ?>" class="<?php if($page == $pagination){echo "disabled";} ?>">
         <i class="fa-solid fa-angle-right"></i></a>
-    <a href="?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $pagination; ?>" class="<?php if($page == $pagination){echo "disabled";} ?>">
+    <a href="?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $pagination; ?>" class="<?php if($page == $pagination){echo "disabled";} ?>&listNum=<?php echo $listNum ?>">
         <i class="fa-solid fa-angles-right"></i></a>
 
 </div>
-<div align="right">items: <?php echo $page_num; ?></div>
+<div align="right">Now showing: <?php echo ($page * $listNum) - $listNum +1; ?>~<?php if($page * $listNum < $page_num){echo $page * $listNum;}
+    else{echo $page_num;}?> /<?php echo $page_num; ?></div>
 </div>
 </form>
 
