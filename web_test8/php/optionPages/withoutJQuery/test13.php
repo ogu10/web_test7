@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Bootstrap Trial</title>
-    <link rel="icon" type="image/png" sizes="192x192" href="../images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="http://localhost:8080/web_test7/web_test8/images/android-chrome-180x180.png">
 
 
 
@@ -95,16 +95,30 @@
 
     <script>
 
-        function reloadData(){
+        function reloadDataJs(){
             $.get("http://localhost:8080/web_test7/web_test8/php/tableData3.php?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>&listNum=<?php echo $listNum ?>").then(
                 function(response){
-                    $("#ajaxLoad2").html(response)
+                    document.getElementById('ajaxLoad2').innerHTML = response;
+                }
+            )
+        }
+        document.addEventListener('DOMContentLoaded', function(){
+            reloadDataJs();
+        });
+
+
+
+        function reloadData(){
+            $.get("table9.php").then(
+                function(response){
+                    $("#ajaxLoad").html(response)
                 }
             )
         }
         $(document).ready(function(){
             reloadData();
         });
+
     </script>
 
 </footer>

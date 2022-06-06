@@ -1,3 +1,7 @@
+
+<link rel="icon" type="image/png" sizes="192x192" href="http://localhost:8080/web_test7/web_test8/images/android-chrome-180x180.png">
+
+
 <!-- コメント送信フォーム -->
 <form method="post" action="/comment/" id="commentSubmit">
     <textarea name="comment" rows="3" id="commentInput"></textarea>
