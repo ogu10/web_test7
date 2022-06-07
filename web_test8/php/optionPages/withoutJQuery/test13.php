@@ -84,7 +84,7 @@
     </style>
 
     <script>
-
+        //js limited code
         function loadDoc() {
 
             let xhttp = new XMLHttpRequest();
