@@ -1,6 +1,5 @@
 <head>
     <script src="https://kit.fontawesome.com/2b5ebdc171.js" crossorigin="anonymous"></script>
-    <link href="../css/buttonMaster.css" rel="stylesheet">
 </head>
 
 
