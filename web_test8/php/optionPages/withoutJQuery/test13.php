@@ -8,17 +8,7 @@
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link href="../css/styleSheet.css" rel="stylesheet">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/2b5ebdc171.js" crossorigin="anonymous"></script>
-
-    <!-- Vendor CSS Files -->
-    <!--    <link href="css/assets/vendor/aos/aos.css" rel="stylesheet">-->
-    <link href="../css/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!--    <link href="css/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">-->
-    <link href="../css/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="../css/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="../css/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
 </head>
 <header>
@@ -95,29 +85,61 @@
 
     <script>
 
-        function reloadDataJs(){
-            $.get("http://localhost:8080/web_test7/web_test8/php/tableData3.php?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>&listNum=<?php echo $listNum ?>").then(
-                function(response){
-                    document.getElementById('ajaxLoad2').innerHTML = response;
+        function loadDoc() {
+
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    document.getElementById('ajaxLoad2').innerHTML = xhttp.response;
+                }
+                else {
+                   console.log(this.status)
+                }
+            };
+
+            xhttp.open("GET", "http://localhost:8080/web_test7/web_test8/php/tableData3.php?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>&listNum=<?php echo $listNum ?>", true);
+            xhttp.send();
+        }
+
+
+/*        function reloadDataJs() {
+
+            let xhr = new XMLHttpRequest();
+            xhr.open('get', "http://localhost:8080/web_test7/web_test8/php/tableData3.php?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>&listNum=<?php echo $listNum ?>");
+            xhr.addEventListener('loaded', function() {
+                console.log("loaded")
+                    document.getElementById('ajaxLoad2').innerHTML = xhr.response;
+            });
+        }*/
+
+/*            $.ajax({
+                url: "http://localhost:8080/web_test7/web_test8/php/tableData3.php?name2=<?php echo $searchName ?>&sort=<?php echo $sortOrder ?>&column=<?php echo $sortBy ?>&page=<?php echo $page ?>&listNum=<?php echo $listNum ?>",
+                type: "get"
+            }).then(
+                function(data){
+                    document.getElementById('ajaxLoad2').innerHTML = data;
                 }
             )
-        }
+        };*/
+
         document.addEventListener('DOMContentLoaded', function(){
-            reloadDataJs();
+           // reloadDataJs();
+            loadDoc();
         });
 
 
-
-        function reloadData(){
+/*        function reloadData(){
             $.get("table9.php").then(
                 function(response){
-                    $("#ajaxLoad").html(response)
+                    $("#ajaxLoad2").html(response)
                 }
             )
         }
-        $(document).ready(function(){
-            reloadData();
-        });
+
+ */
+        // $(document).ready(function(){
+        //     reloadDataJs();
+        // });
 
     </script>
 
