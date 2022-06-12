@@ -1,8 +1,8 @@
 <!--//data.php-->
 <?php
 require_once('common.php');
-require_once('MF.php');
 require_once('FW.php');
+require_once('MF.php');
 
 $messi = new Forward('30', 'Messi', 'PSG', 'Argentina', 16);
 $ronald = new Forward('7', 'Ronald', 'Manchester U', 'Portuguese', 30);

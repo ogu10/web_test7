@@ -15,10 +15,6 @@ class Player {
         self::$count++;
     }
 
-    public function choose() {
-        echo 'I choose '.$this->name.'!!!!';
-    }
-
     public function getNumber() {
         return $this->number;
     }
