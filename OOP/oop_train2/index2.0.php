@@ -17,9 +17,10 @@ require_once('all.php');
     <h3>We have <font color="red"><?php echo Player::getCount() ?></font> players!</h3>
 
     <table id="players_list" class="players_list table table-striped">
-        <th>&nbsp;&nbsp; No.</th>
-        <th>&nbsp;&nbsp;&nbsp;&nbsp;Name</th>
-        <th>&nbsp;&nbsp;&nbsp;&nbsp;Team</th>
+        <th>&nbsp; No.</th>
+        <th>&nbsp;Name</th>
+        <th>&nbsp;Team</th>
+        <th>Position</th>
         <th>Score</th>
         </tr>
         　 <?php foreach ($players as $player): ?>
@@ -32,22 +33,44 @@ require_once('all.php');
                 　<?php echo $player->getTeam() ?></td>
             <td>
                 <?php if ($player instanceof Forward): ?>
-                    <p class="menu-item-type"><font color="red">
+                <?php echo "<font color='red'>FW</font></td><td>"; ?>
+                    <p class="menu-item-type"><font color="orange">
                         goal: <?php echo $player->getGoal() ?></font></p><?php endif ?>
                 <?php if ($player instanceof Midfielder): ?>
+                <?php echo "<font color='lime'>MF</font></td><td>"; ?>
                     <p class="menu-item-type">
-                    <font color="lime">assist: <?php echo $player->getAssist() ?></font></p><?php endif ?></td>
+                    <font color="yellow">assist: <?php echo $player->getAssist() ?></font></p><?php endif ?></td>
             <?php endforeach ?>
     </table>
 </div>
 </body>
 
-
 <style>
+    body {
+        background: papayawhip;
+        text-align: center;
+        margin-top: 9%;
+    }
     table {
-        margin-left: 30%;
-        width: 40%;
+        margin-left: 25%;
+        width: 50%;
         text-align: left;
+        border-collapse: collapse;
+    }
+
+    table tr{
+        background-image: linear-gradient(40deg, deepskyblue 0%, blue 74%);
+    }
+
+    table tr:last-child *{
+        border-bottom: none;
+    }
+
+    table th,table td{
+        text-align: center;
+        border: solid 2px #fff;
+        color: white;
+        padding: 10px 0;
     }
 </style>
 </html>
