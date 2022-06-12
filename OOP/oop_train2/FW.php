@@ -1,6 +1,6 @@
 <!--//drink.php-->
 <?php
-require_once('all.php');
+require_once('common.php');
 
 class Forward extends Player {
     private $goal;

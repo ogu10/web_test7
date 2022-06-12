@@ -1,6 +1,6 @@
 <!--//data.php-->
 <?php
-require_once('all.php');
+require_once('common.php');
 require_once('MF.php');
 require_once('FW.php');
 
