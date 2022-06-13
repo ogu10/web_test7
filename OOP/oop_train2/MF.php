@@ -14,7 +14,7 @@ class Midfielder extends Player {
         return $this->assist;
     }
 
-    public function setType($assist) {
+    public function setAssist($assist) {
         $this->assist = $assist;
     }
 
