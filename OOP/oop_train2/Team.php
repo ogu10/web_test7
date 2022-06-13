@@ -1,11 +1,15 @@
 <?php
 
 class Team {
-    public function __construct($nation, $city, $team) {
-        $this->number = $nation;
-        $this->name = $city;
-        $this->team = $team;
 
+    public $nation;
+    public $city;
+    public $team;
+
+    public function __construct($nation, $city, $team) {
+        $this->nation = $nation;
+        $this->city = $city;
+        $this->team = $team;
     }
 
     public function getTeam() {
