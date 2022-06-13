@@ -31,4 +31,3 @@ class Player {
         return self::$count;
     }
 }
-?>

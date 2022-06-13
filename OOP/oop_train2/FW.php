@@ -14,7 +14,7 @@ class Forward extends Player {
         return $this->goal;
     }
 
-    public function setType($goal) {
+    public function setGoal($goal) {
         $this->goal = $goal;
     }
 
