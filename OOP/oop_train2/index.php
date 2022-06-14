@@ -1,7 +1,7 @@
 <!--index.php-->
 <?php
 require_once('playersData.php');
-require_once('common.php');
+require_once('Player.php');
 ?>
 
 <!DOCTYPE html>

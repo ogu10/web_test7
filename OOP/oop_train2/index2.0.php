@@ -1,7 +1,7 @@
 <!--index.php-->
 <?php
 require_once('playersData.php');
-require_once('common.php');
+require_once('Player.php');
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +42,10 @@ require_once('common.php');
                     <font color="yellow">assist: <?php echo $player->getAssist() ?></font></p><?php endif ?></td>
             <?php endforeach ?>
     </table>
+    <?php foreach ($players as $player): ?>
+    <?php if ($player instanceof Midfielder): ?>
+    <?php echo $player->callMF() ?><?php endif ?>
+    <?php endforeach ?>
 </div>
 </body>
 
