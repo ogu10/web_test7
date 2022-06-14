@@ -8,14 +8,6 @@ require_once('Sajan.php');
 
 /*$manU = new Team("UK","Manchester","Manchester United");*/
 $messi = new Forward('30', 'Messi', 'PSG', 'Argentina', 16);
-$messi->setAssist(10);
-
-$saj_obj= new Sajan(2);
-$saj_obj->setAssist();
-print_r($saj_obj->getName());
-
-
-
 $ronald = new Forward('7', 'Ronald', 'manU', 'Portuguese', 30);
 $salah = new Forward('10', 'Salah', 'Liverpool', 'Egypt', 31);
 $modric= new Midfielder('10', 'Modric', 'Real Madrid', 'Croatia', 14);

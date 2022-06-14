@@ -6,7 +6,6 @@ class Player
     public $name;
     protected $team;
     private $nationality;
-    private $assist;
     protected static $count = 0;
 
     public function __construct($number, $name, $team, $nationality)
@@ -39,22 +38,5 @@ class Player
     {
         return self::$count;
     }
-
-
-    public function getAssist()
-    {
-        return $this->assist;
-    }
-
-    /**
-     * @param mixed $assist
-     */
-    public function setAssist($assist): void
-    {
-        $this->assist = $assist;
-    }
-
-
-
 
 }
