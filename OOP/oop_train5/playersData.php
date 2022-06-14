@@ -15,7 +15,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $players = array();
     $x=1; foreach ($result as $value):
 
-        $query2 =  "SELECT speed FROM scores WHERE `id` = $x";
+        $query2 =  "SELECT `speed` FROM scores WHERE `id` = $x";
         $result2 = 0;
         $stmt2 = $dbh->query($query2);
         $result2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
