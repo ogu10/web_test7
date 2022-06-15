@@ -441,11 +441,11 @@ return array_merge([
     'mandrill' => 'Mandrill',
     'postmark' => 'Postmark',
     'sparkpost' => 'Sparkpost',
-    'sendmail' => 'Sendmail',
+    'sendmail' => 'メール送信',
     'path' => 'パス',
     ' ' => 'スペース',
     'provider' => 'プロバイダー',
-    'secret' => 'Secret',
+    'secret' => 'シークレット',
     'domain_name' => 'ドメイン名',
     'api_key' => 'APIキー',
     'from' => 'フォーム',
@@ -489,12 +489,12 @@ return array_merge([
     'Y.m.d' => 'YYYY.MM.DD',
 
     // Time Format
-    'h' => '12 HOURS',
-    'H' => '24 HOURS',
+    'h' => '12時間表示',
+    'H' => '24時間表示',
 
     // Decimal and Thousand Separator
-    '.' => 'DOT(.)',
-    ',' => 'COMMA(,)',
+    '.' => 'ドット(.)',
+    ',' => 'コンマ(,)',
 
     // Currency Positions
     'prefix_only' => '$1,100.00',
@@ -513,25 +513,25 @@ return array_merge([
     'like_suffix_with_space' => ':amount :symbol',
 
     // Validation
-    "is_required" => "is required",
-    "and" => "and",
-    "this_field_is_required" => "This field is required",
-    "this_field_is_invalid" => "This field is invalid",
-    "this_field_is_not_alphanumeric" => "This field is not alphanumeric",
-    "passwords_are_not_matched" => "Passwords are not matched",
-    "please_enter_a_strong_password" => "Please enter a strong password.",
-    "are_not_match" => "are not match",
-    "can_not_before" => "can not before",
-    "is_invalid" => "is invalid",
-    "minimum_length_is" => "Minimum length is",
-    "maximum_length_is" => "Maximum length is",
-    "maximum_number_is" => "Maximum number is",
-    "minimum_number_is" => "Minimum number is",
-    "is_not_alphanumeric" => "is not alphanumeric",
-    "not_found" => "Not found",
-    "you_are_going_to_cancel_an_invitation" => "You are going to cancel an invitation.",
-    'hands_up' => 'Hand\'s Up!',
-    'you_are_going_to_delete_message' => 'You are going to delete {resource}',
+    "is_required" => "必要です",
+    "and" => "と",
+    "this_field_is_required" => "この項目は必須です",
+    "this_field_is_invalid" => "この項目は無効です",
+    "this_field_is_not_alphanumeric" => "この項目では英数字は使用できません",
+    "passwords_are_not_matched" => "パスワードが正しくありません",
+    "please_enter_a_strong_password" => "より強力なパスワードを設定してください",
+    "are_not_match" => "一致しません",
+    "can_not_before" => "can not before", //TODO: ???
+    "is_invalid" => "無効です",
+    "minimum_length_is" => "最短で",
+    "maximum_length_is" => "最長で",
+    "maximum_number_is" => "最大で",
+    "minimum_number_is" => "最小で",
+    "is_not_alphanumeric" => "英数字は使用できません",
+    "not_found" => "見つかりませんでした",
+    "you_are_going_to_cancel_an_invitation" => "招待をキャンセルします",
+    'hands_up' => '挙手！', //TODO: need to check
+    'you_are_going_to_delete_message' => '{resource}を削除しますか？',
 
     // Btn
     "action" => "Action",

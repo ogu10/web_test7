@@ -4,7 +4,7 @@ require_once('player.php');
 require_once('score.php');
 
 $dbh = new PDO('mysql:host=localhost;dbname=jobins;charset=utf8','root','');
-$query =  "SELECT * FROM players";
+$query =  "SELECT * FROM players LIMIT 8";
 $result = 0;
 $stmt = $dbh->query($query);
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -15,20 +15,24 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $players = array();
     $x=1; foreach ($result as $value):
 
-        $query2 =  "SELECT `speed` FROM scores WHERE `id` = $x";
+        $query2 =  "SELECT * FROM scores WHERE `id` = $x";
         $result2 = 0;
         $stmt2 = $dbh->query($query2);
         $result2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
     var_dump($result2);
-    $players[$x] = new player($value['id'], $value['No'], $value['name'], $value['team'], $result2);
+    echo "<br>";
+    $players[$x] = new player($value['id'], $value['No'], $value['name'], $value['team']);
     $x++;
 endforeach;
+echo "<br><br><br>";
 var_dump($result);
+echo "<br><br><br>";
 var_dump($players);
+echo "<br><br><br>";
 ?>
 
 
-　 <?php $x=1; foreach ($players as $value): ?>
+　 <?php $x=1; foreach ($result as $value): ?>
 <tr>
     <td>
         　<?php echo $value['No'] ?></td>

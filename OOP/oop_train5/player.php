@@ -8,12 +8,11 @@ class player {
     public $team;
     public score $speed;
 
-    public function __construct($id, $number, $name, $team, score $speed) {
+    public function __construct($id, $number, $name, $team) {
         $this->id = $id;
         $this->number = $number;
         $this->name = $name;
         $this->team = $team;
-        $this->speed = $speed;
     }
 
     public function getNumber()
