@@ -1,6 +1,6 @@
 <?php
 
-class score
+class abilityScores
 {
     protected $id;
     public $speed;

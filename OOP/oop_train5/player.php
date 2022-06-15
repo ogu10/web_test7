@@ -1,12 +1,12 @@
 <?php
-require_once('score.php');
+require_once('abilityScores.php');
 
 class player {
     protected $id;
     public $number;
     public $name;
     public $team;
-    public score $speed;
+    public abilityScores $speed;
 
     public function __construct($id, $number, $name, $team) {
         $this->id = $id;
