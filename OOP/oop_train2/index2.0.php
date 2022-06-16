@@ -2,6 +2,30 @@
 <?php
 require_once('playersData.php');
 require_once('Player.php');
+require_once('Computer.php');
+require_once('MotherBoard.php');
+
+
+$a_board = new MotherBoard();
+$a_board->setName("Intel");
+
+$a_pascon = new Computer();
+$a_pascon->setBrand("Apple");
+$a_pascon->setBoard($a_board);
+
+
+echo ($a_pascon->getBoard()->getName());
+echo ($a_pascon->getBrand());
+$chips = array();
+$chips['0'] = new Chip("a chip");
+$chips['1'] = new Chip("b chip");
+$chips['2'] = new Chip("c chip");
+$chips['3'] = new Chip("d chip");
+
+$a_pascon->setChips($chips);
+
+
+
 ?>
 
 <!DOCTYPE html>

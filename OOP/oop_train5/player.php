@@ -1,21 +1,17 @@
 <?php
+require_once('abilityScores.php');
 
-class Player
-{
+class player {
+    protected $id;
     public $number;
     public $name;
-    protected $team;
-    private $nationality;
-    protected static $count = 0;
+    public $team;
 
-    public function __construct($number, $name, $team, $nationality)
-    {
+    public function __construct($id, $number, $name, $team) {
+        $this->id = $id;
         $this->number = $number;
         $this->name = $name;
         $this->team = $team;
-        $this->nationality = $nationality;
-
-        self::$count++;
     }
 
     public function getNumber()
@@ -33,10 +29,5 @@ class Player
         return $this->team;
     }
 
-
-    public static function getCount()
-    {
-        return self::$count;
-    }
 
 }
