@@ -1,20 +1,19 @@
 <?php
+require_once('player.php');
 
-class abilityScores
+class playerScore extends player
 {
-    protected $id;
     public $speed;
     public $pass;
     public $shoot;
 
-    public function __construct($id, $speed, $pass, $shoot)
+    public function __construct($id, $number, $name, $team, $speed, $pass, $shoot)
     {
-        $this->id = $id;
+        parent::__construct($id, $number, $name, $team);
         $this->speed = $speed;
         $this->pass = $pass;
         $this->shoot = $shoot;
     }
-
     public function getSpeed()
     {
         return $this->speed;
@@ -27,5 +26,4 @@ class abilityScores
     {
         return $this->shoot;
     }
-
 }

@@ -6,7 +6,6 @@ class player {
     public $number;
     public $name;
     public $team;
-    public abilityScores $speed;
 
     public function __construct($id, $number, $name, $team) {
         $this->id = $id;

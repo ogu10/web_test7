@@ -27,31 +27,24 @@ $x=1; foreach ($result as $value):
     $x++;
 endforeach;
 echo "<br><br><br>";
-var_dump($result);
+var_dump($score);
 echo "<br><br><br>";
 var_dump($players);
 echo "<br><br><br>";
 ?>
 
 
-　 <?php $x = 1;
-foreach ($result
-
-as $value): ?>
+ <?php $x = 1; foreach ($result as $value): ?>
 <tr>
     <td>
         　<?php echo $value['No'] ?></td>
     <td>
         　<?php echo $value['name'] ?></td>
     <td>
-        　<?php /*$team_list = isset($value['team'])? $value['team']: "-no data-";*/
-        echo $value['team']; ?></td>
-    <td>&nbsp;&nbsp;&nbsp;
-        <?php echo "<!--<button class=`button3`>--><a href=../../edit.php?id=" . $value["id"] . ">"; ?>
-        <i class="fa-solid fa-pen-nib"></i>
-        <?php echo "</a>\n";
-        echo "<td>"; ?>
-        <i class="fa-solid fa-trash"></i>
+        　<?php echo $value['team']; ?></td>
+    <td>
+        <?php echo $scores['speed'] ?></td>
+
         <?php echo "<br>";
         echo "</tr>\n"; ?>
         <?php $x++ ?>

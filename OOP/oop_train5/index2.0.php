@@ -15,11 +15,20 @@ require_once('playersData.php');
     <form method="post" action="confirm.php">
         <div class="menu-items">
             <table class="menu-item">
-                <?php foreach ($players as $player): ?>
+                <th>&nbsp; No.</th>
+                <th>&nbsp;Name</th>
+                <th>&nbsp;Team</th>
+                <th>Speed</th>
+                <th>Pass</th>
+                <th>Shoot</th>
+                <?php foreach ($playerScore as $player): ?>
                     <tr>
-                    <td><?php echo $player->getNumber() ?><td>
+                    <td><?php echo $player->getNumber() ?></td>
                     <td class="menu-item-name"><?php echo $player->getName() ?></td>
                     <td class="menu-item-name"><?php echo $player->getTeam() ?></td>
+                    <td class="menu-item-name"><?php echo $player->getSpeed() ?></td>
+                    <td class="menu-item-name"><?php echo $player->getPass() ?></td>
+                    <td class="menu-item-name"><?php echo $player->getShoot() ?></td>
                     <?php if ($player instanceof Midfielder): ?>
                         <p class="menu-item-type"><?php echo $player->getType() ?></p>
                     <?php else: ?>
@@ -37,8 +46,8 @@ require_once('playersData.php');
             margin-bottom: 2%;
         }
         table{
-            width: 28%;
-            text-align: right;
+            width: 35%;
+            text-align: center;
         }
         body{
             background-color: lightblue;
