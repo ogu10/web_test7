@@ -29,10 +29,6 @@ require_once('playersData.php');
                     <td class="menu-item-name"><?php echo $player->getSpeed() ?></td>
                     <td class="menu-item-name"><?php echo $player->getPass() ?></td>
                     <td class="menu-item-name"><?php echo $player->getShoot() ?></td>
-                    <?php if ($player instanceof Midfielder): ?>
-                        <p class="menu-item-type"><?php echo $player->getType() ?></p>
-                    <?php else: ?>
-                    <?php endif ?>
                     </tr>
                 <?php endforeach ?>
             </table>
