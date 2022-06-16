@@ -15,16 +15,16 @@ return array_merge([
     'default_delete' => ':nameのデフォルト設定を削除することは出来ません', //TODO: need to check
     'default_update' => ':nameのデフォルト設定を更新することは出来ません', //TODO: need to check
     'old_password_is_in_correct' => '以前のパスワードは使用出来ません',
-    'attach_log' => 'New :pivot attached to :model',
-    'detach_log' => ':pivot detached from :model',
-    'status_log' => ':model has been :status',
+    'attach_log' => '新しい:pivotが:modelに追加されました',
+    'detach_log' => ':pivotが:modelから削除されました',
+    'status_log' => ':modelの状況は:statusです',
     'incorrect_user_password' => 'ユーザー名もしくはパスワードが間違っています',
     'invite_user_response' => 'ユーザーが招待されました',
     'invalid_token' => 'そのトークンは無効です',
     'user_account_confirmed' => 'アカウントが正しく認証されました',
     'user_invited_to_join' => 'ユーザーが招待されました',
     'user_confirm_joining' => 'ユーザーが招待を受諾しました',
-    'log_description_message' => ':model has been :event',
+    'log_description_message' => ':modelは:eventです',
     'password_reset_mail_has_been_sent_successfully' => 'パスワード変更のメールを送付いたしました。ご確認ください。',
     'no_user_found_on_that_email' => 'そのメールアドレスのユーザーは見つかりませんでした。',
     'password_has_been_reset_successfully' => 'パスワードがリセットされました',
@@ -32,10 +32,10 @@ return array_merge([
     'created' => '作成済み',
     'deleted' => '消去済み',
     'updated' => '更新済み',
-    'resource' => 'resource', //I couldn't figure out what it means.
+    'resource' => 'リソース',
     'this_resource_already_referenced_message' => 'この内容は既にほかのテーブルに紐づけられています',
 
-    '0' => 'ZERO (0)', //don't need to translate? messages are not displayed
+    '0' => 'ZERO (0)', //maybe no need of translation
     // HTTP Responses
     '200' => 'Success',
     '2' => 'TWO (2)',
@@ -53,11 +53,11 @@ return array_merge([
 
     // Custom Field Builder
     'custom_field' => 'Custom Field', //TODO: what it means???
-    'custom_fields' => 'Custom Fields',
-    'custom_field_type' => 'Custom field type',
+    'custom_fields' => 'Custom Fields', //TODO: what it means???
+    'custom_field_type' => 'Custom field type', //TODO: what it means???
     'validation.required' => ':attribute',
-    'audience_type' => 'audience(roles/users)',
-    'the_notification_channel_field_is_required' => 'The notification channel field is required.',
+    'audience_type' => '閲覧者(役職/ユーザー)',
+    'the_notification_channel_field_is_required' => '通知チャンネル欄は必要です',
 
     // Fields
     'text' => 'テキストボックス',
@@ -71,7 +71,7 @@ return array_merge([
     'enter_to_add_new' => 'Enterを押して追加',
     'no_options_found' => 'オプションが見つかりませんでした',
     'pick_a_color' => '色を選択',
-    'job_desk' => 'Job Desk',//TODO: ???
+    'job_desk' => 'Job Desk', //TODO: ???
 
     // Notification event
     'notification_events' => '通知',
@@ -96,7 +96,7 @@ return array_merge([
     'notification_terminated' => '終了済み',
     'notification_termination' => '終了',
     'notification_increment' => '増やす',
-    'notification_generate' => '作成する', //生成でもいいけどまあこっちのが自然
+    'notification_generate' => '作成する', //生成でもいいけど作成のが自然
     'employee_password' => '従業員パスワード',
 
     // Notifications
@@ -164,8 +164,8 @@ return array_merge([
     'male' => '男性',
     'female' => '女性',
     'password_requirements_message' => 'パスワードは1つ以上の大文字、小文字、特殊文字と数字を含まなくてはいけません。またパスワードは8文字以上でなくてはいけません。',
-    'new' => 'New',
-    'old' => 'Old',
+    'new' => '新しい',
+    'old' => '古い',
     'confirm' => '確認',
     'old_password' => '古いパスワード',
     'notification_setting' => '通知設定',
@@ -197,7 +197,7 @@ return array_merge([
     'status_processing' => '処理中',
     'status_sent' => '送信済み',
     'status_draft' => '下書き',
-    'status_regular' => 'Regular', //TODO: ???
+    'status_regular' => '通常の',
     'status_auto' => 'オート',
     'status_dynamic' => 'ダイナミック',
     'status_imported' => 'インポート済み',
@@ -209,7 +209,7 @@ return array_merge([
     'status_reject' => '拒否する',
     'status_rejected' => '拒否済み',
     'status_canceled' => 'キャンセル済み',
-    'status_bypassed' => 'Bypassed', //TODO: ???
+    'status_bypassed' => '直接承認', //TODO: ???
     'status_generated' => '作成済み',
     'status_partially' => '部分的に送信済み',
     'you_are_going_to_approve_this_leave_request' => '休暇申請を承認',
@@ -254,8 +254,8 @@ return array_merge([
     'change_password_users' => 'パスワードを変更できます',
     'change_profile_picture_users' => 'プロフィール写真を変更できます',
     'update_delivery_settings' => 'メール設定を変更できます',
-    'update_corn_job_settings' => 'corn job 設定を変更できます',
-    'view_corn_job_settings' => 'corn job 設定を表示できます',
+    'update_corn_job_settings' => 'corn job 設定を変更できます', //TODO: need to check
+    'view_corn_job_settings' => 'corn job 設定を表示できます', //TODO: need to check
     'view_delivery_settings' => 'メール設定を表示できます',
     'view_brand_delivery_settings' => 'ブランドのメール設定を表示できます',
     'view_notification_settings' => '通知設定を表示できます',
@@ -338,7 +338,7 @@ return array_merge([
     'attendances_daily_log' => '各日の出席記録を表示できます',
     'update_attendance_settings' => '出席登録の設定を更新できます',
     'view_attendance_settings' => '出席登録の設定を確認できます',
-    'view_all_attendance' => 'すべての出席を表示できます（この権限をtrueに設定すると、この役割を持つすべてのユーザーが任意のリストのすべての出席にアクセスできます）。',
+    'view_all_attendance' => 'すべての出席を表示できます(この権限をonに設定すると、この役割を持つすべてのユーザーが任意のリストのすべての出席にアクセスできます)',
     'update_employee_leave_amount' => '従業員の休暇給与額を更新できます',
     'manage_leave_allowance_policy' => '休暇手当規則を管理できます',
     'view_leave_calendar' => '休暇期間を確認できます',
@@ -356,7 +356,7 @@ return array_merge([
 
     'view_leave_settings' => '休暇設定を表示できます',
     'manage_cancel_leave' => '自分の休暇申請をキャンセルできます',
-    'manage_bypass_leave' => '休暇申請を確定できます', //TODO: need to check
+    'manage_bypass_leave' => '休暇申請を直接承認できます', //TODO: need to check
     'manage_approve_leave' => '休暇申請を承認できます',
     'manage_reject_leave' => '休暇申請を否認できます',
     'create_leave_types' => '休暇タイプを作成できます',
@@ -372,7 +372,7 @@ return array_merge([
     'date_format' => 'データフォーマット',
     'time_format' => '時間フォーマット',
     'decimal_separator' => '小数点',
-    'thousand_separator' => '千の区切り文字',
+    'thousand_separator' => '千の位ごとのカンマ(,)',
     'number_of_decimal' => '小数点以下の桁数',
     'currency_position' => '通貨価値',
 
@@ -421,16 +421,16 @@ return array_merge([
 
     // Add and all labels
     'field_label' => '{subject} {key}',
-    'textarea_placeholder' => 'Add {name} here',
+    'textarea_placeholder' => '{name}を追加',
 
-    'all_feature_name' => 'All {name}',
-    'add_feature_name' => 'Add {name}',
-    'edit_feature_name' => 'Edit {name}',
-    'copy_feature_name' => 'Copy {name}',
+    'all_feature_name' => '全ての{name}',
+    'add_feature_name' => '{name}を追加',
+    'edit_feature_name' => '{name}を編集',
+    'copy_feature_name' => '{name}をコピー',
     'field_title' => '{subject} {infix} {title}',
-    'place_holder' => 'Enter {subject} {type}',
+    'place_holder' => '{subject}を{type}へ',
     'title' => 'タイトル',
-    'notification_form' => 'お知らせフォーム',
+    'notification_form' => '通知フォーム',
     'time' => '時刻',
     'event' => 'イベント',
     'templates' => 'テンプレート',
@@ -461,7 +461,7 @@ return array_merge([
     'unpaid' => '未払い',
     'un_paid' => '未払い',
     'amount' => '額',
-    'special_percentage' => 'Special percentage',
+    'special_percentage' => '特別割合',
     'special' => '特別',
     'start_date' => '開始日時',
     'end_date' => '終了日時',
@@ -471,7 +471,7 @@ return array_merge([
     'smtp_port' => 'SMTPポート',
     'smtp_host' => 'SMTPホスト',
     'default_mail' => 'デフォルトのメール',
-    'from_name' => 'From name', //TODO: 名前から???
+    'from_name' => '名前から', //TODO: 名前から???
 
     // Language
     'en' => 'English',
@@ -521,7 +521,7 @@ return array_merge([
     "passwords_are_not_matched" => "パスワードが正しくありません",
     "please_enter_a_strong_password" => "より強力なパスワードを設定してください",
     "are_not_match" => "一致しません",
-    "can_not_before" => "can not before", //TODO: ???
+    "can_not_before" => "その前にはできません", //TODO: ???
     "is_invalid" => "無効です",
     "minimum_length_is" => "最短で",
     "maximum_length_is" => "最長で",
@@ -659,7 +659,7 @@ return array_merge([
     'org_structure' => '組織構造',
     'attendance_settings' => '出欠の設定',
     'all_attendances' => 'すべての出席者',
-    'attendance' => 'Attendance',
+    'attendance' => '出席',
     'attendance_request' => '出席申請',
     'summery' => '一覧',
     'calendar' => 'カレンダー',
@@ -671,7 +671,7 @@ return array_merge([
     'department' => '部署',
     'choose' => '選択',
     'class' => 'クラス',
-    'purple' => '紫の', //TODO: ？？？？
+    'purple' => '紫の', //TODO: は？？？？
     'success' => '成功',
     'info' => 'Info', //No change
     'warning' => '警告',
@@ -834,7 +834,7 @@ return array_merge([
     'earning_rate' => '収益率',
     'availability' => '利用状態',
     'taken' => '取得済み',
-    'earned' => 'Earned', //TODO: ???
+    'earned' => '稼いだ', //TODO: ???
 
     'punch_in' => '始業打刻',
     'punch_out' => '終業打刻',
@@ -867,7 +867,7 @@ return array_merge([
     'do_you_want_to_move_employee' => '従業員を移動しますか？',
     'you_are_going_to_deactivate_a_department' => '部署を無効化します',
     'you_are_going_to_activate_a_department' => '部署を有効化します',
-    'remove_from_employee_list' => '従業員リストから除外',
+    'remove_from_employee_list' => '従業員リストから削除',
     'add_to_employee_list' => '従業員リストに追加',
     'present' => '現在',
     'not_yet_added' => '未追加',
@@ -917,7 +917,7 @@ return array_merge([
     'you_dont_punch_in_yet' => '始業打刻未完了',
     'employee_is_punched_in_message' => 'この従業員は前の日付で始業打刻されています。',
     'employee_field_is_required' => '従業員情報は必須です。',
-    'punch_in_and_out_time_difference_message' => '始業と終業の打刻は24時間未満でなければなりません。',
+    'punch_in_and_out_time_difference_message' => '始業と終業の打刻間隔は24時間未満でなければなりません。',
     'total_approved_hours' => '合計勤務時間:',
     'in_time' => '規定時間内:',
     'out_time' => '残業:',
@@ -943,11 +943,11 @@ return array_merge([
     'balance' => '平均',
     'daily_log' => 'デイリーログ',
     'punched_in' => '出勤打刻',
-    'preference' => '優先', //？？？
+    'preference' => '特別設定',
     'definitions' => '定義',
-    'punch_in_time_tolerance' => 'Punch in time tolerance', //TODO: ???
+    'punch_in_time_tolerance' => '始業打刻の許容時間範囲',
     'auto_approval' => '自動承認',
-    'enabled_auto_approval_suggestion' => 'こちらが有効な状態では、すべての出席要求は自動的に承認されます。デフォルトでは、アプリはすべての従業員を承認対象と見なします。自動承認のために従業員が操作することが可能であることに注意してください。',
+    'enabled_auto_approval_suggestion' => 'こちらが有効な状態では、すべての出席要求は自動的に承認されます。デフォルトでは、アプリはすべての従業員を承認対象と見なします。自動承認のために従業員が操作することが可能となることに注意してください。',
     'disabled_auto_approval_suggestion' => 'こちらが無効な状態では、すべての出席要求は権限のあるユーザーによって確認されます。ユーザーは、出席リクエストの通知を受け取ることになります。',
     'manage_audience_message' => 'レビュー出席リクエストを望まない役職・ユーザーを追加します。',
     'manage_audience' => '閲覧者を管理する',
@@ -961,8 +961,8 @@ return array_merge([
     'work_availability_definition' => 'Work availability definition', //TODO: ???
     'percentage' => '%',
     'work_availability_definition_recommendation' => '出席率による勤務成績の評価',
-    'good' => 'Good',
-    'bad'=> 'Bad',
+    'good' => 'Good', //no need to change
+    'bad'=> 'Bad', //no need to change
     'before_on_time' => '始業前出勤',
     'on_time_tolerance' => '平均的に時間通り',
     'after_tolerance' => '許容外',
@@ -991,7 +991,7 @@ return array_merge([
     'note' => 'メモ',
     'you_dont_have_permission_to_login' => 'ログインする権限がありません',
     'add_note_here' => 'メモを追加',
-    'this_work_shift_already_have_attendance' => 'このシフトは：actionにすることはできません。出席者がいます。',
+    'this_work_shift_already_have_attendance' => 'このシフトは:actionにすることはできません。出席者がいます。',
     'you_are_going_to_cancel_a_attendance' => '出席をキャンセルします',
     'you_are_going_to_reject_a_attendance' => '出席を拒否します',
     'you_are_going_to_approve_this_attendance' => 'この出席を承認します',
@@ -1174,7 +1174,7 @@ return array_merge([
     //Update
     'server_requirements' => 'サーバー要件',
     'server_permission_errors' => '続行するには、サーバーと権限のエラーを修正してください。',
-    'php' => 'Php',
+    'php' => 'PHP',
     'version_required' => 'Version {number}が必要です',
     'environment' => '環境',
     'database_label' => 'データベース',
@@ -1229,7 +1229,7 @@ return array_merge([
     'monthly_payrun_note' => '有効な状態で、従業員に出席ログがない場合、給与は日給に基づいて差し引かれます。',
     'default_payrun' => 'デフォルトPayrun',
     'badge_value' => 'バッジ値',
-    'payrun_generating_type' => 'Payrun generating type',
+    'payrun_generating_type' => 'Payrun作成タイプ',
     'none' => 'なし',
     'eligible_audience' => '対象となる閲覧者',
     'all_user' => '全ユーザー',
@@ -1260,7 +1260,7 @@ return array_merge([
     'who_are_allowed_for_payrun' => '誰がペイランを許可されていますか？',
     'manual_payrun_audience_message' => '部門または従業員ごとにユーザーを直接追加して、給与明細を作成できます。
     いずれかの部門を選択すると、その部門のアクティブな従業員のみが追加されます。非アクティブまたは解雇された従業員を選択する必要がある場合は、ユーザーが提出したものから選択できます',
-    'payrun_and_badge' => 'Payrun and Badge', //TODO: Need to check
+    'payrun_and_badge' => 'Payrunとバッジ', //TODO: Need to check
     'why_payrun_and_badge' => 'Why Payrun & Badge?',
     'edit_payrun' => 'Payrunを編集',
     'add_payrun' => 'Payrunを追加',
@@ -1418,8 +1418,7 @@ return array_merge([
     'csv_huge_data_guide' => 'CSVファイルは、デフォルトのサーバー構成で500行を超えないようにする必要があります。',
     'csv_error_handle_guide' => 'エラーを解決するにはエラーファイルをダウンロードして誤ったセルを修正し、.csv形式でそのファイルを再度インポートします。',
     'csv_after_import_message' => 'インポートされたすべての従業員は解雇された従業員を除いて、ログイン用パスワードをリセットするためのメールを受信します',
-    'csv_column_data_format' => '列：department、designation、employment_status、およびrolesの値は、アプリケーションに存在する値と同じである必要があります。
-    性別の列では3つのオプション[男性、女性、その他]を使用できます。複数の役職が存在する場合、役割を区切るにはコンマ(,)のみを使用し、joining_date列はYYYY-MM-DDの日付形式である必要があります。',
+    'csv_column_data_format' => '列：department、designation、employment_status、およびrolesの値は、アプリケーションに存在する値と同じである必要があります。性別の列では3つのオプション[男性、女性、その他]を使用できます。複数の役職が存在する場合、役割を区切るにはコンマ(,)のみを使用し、joining_date列はYYYY-MM-DDの日付形式である必要があります。',
     'csv_download_label' => 'サンプルの.CSVファイルを確認できます',
 
     //Import
@@ -1465,7 +1464,7 @@ return array_merge([
     'command_without_php_path' => 'PHPパスを使用しないコマンド',
     'see_documentation' => 'ドキュメントを参照してください',
     'cron_job_description_message' => 'スケジュールされた勤務を実行するため',
-    'cron_job_setting_suggestion' => 'We are providing the cron job command and highly recommend to run it every minute(once per minute ****). Copy the command and insert it to your hosted server\'s crontab. For more help you can see the documentation.', //the message won't be shown for users
+    'cron_job_setting_suggestion' => 'cronジョブコマンドを提供しており、毎分実行することをお勧めします。コマンドをコピーして、ホストサーバーのcrontabに挿入します。詳細については、ドキュメントを参照してください。',
     'cron_job_setting_warning' => '勤務シフトの割り当て、給与明細の生成、一括メールの送信、休暇の割り当て、休日の更新を行うには、ホストサーバーでcron jobを設定する必要があります。',
     'export' => 'エクスポート',
 
